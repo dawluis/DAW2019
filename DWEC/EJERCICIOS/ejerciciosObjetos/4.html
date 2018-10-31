@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+        <script>
+           var d= new Date;
+           var oFecha= new Object();
+           oFecha.diaMes=d.getDate;
+           oFecha.diaSemana=d.getDay;
+           oFecha.mesNum=d.getMonth;
+           oFecha.mesNom=d.getUTCMonth;
+           oFecha.año=d.getFullYear;
+           oFecha.obtenFechaN=function(){
+               var dia= d.getDate();
+               var mes= d.getMonth()+1;
+               var año= d.getFullYear();
+               return dia+"/"+mes+"/"+año;
+           }
+           oFecha.obtenFecha=function(){
+                
+               return d.toString();
+           }
+           oFecha.actualizaFecha=function(){
+               d= new Date;
+               return d;
+
+           }
+           console.log(oFecha.obtenFechaN());
+           console.log(oFecha.obtenFecha());
+           console.log(d);
+           
+
+
+
+
+        </script>
+    
+</body>
+
+</html>

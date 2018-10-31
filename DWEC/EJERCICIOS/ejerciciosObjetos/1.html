@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+        <script>
+                var vector= new Array;
+                var contador=0;
+                document.write("<table border=1px>");
+
+
+                for(var a=1; a<=100; a++){
+                    vector[a]=Math.floor((Math.random() * 1000) + 1);
+                }
+                
+                function ordenar(vector){
+                var arreglo= vector.sort();
+                return arreglo;
+                }
+                
+                var vector1= ordenar(vector);
+                for(var i= 0; i <100 ; i++){
+                    contador++;
+                        if(contador==0){
+                            document.write("<tr>");
+                        }
+                        document.write("<td>");
+                        document.write(vector1[i]);   
+                        document.write("</td>");
+                        
+                        if(contador==10){
+                            document.write("</tr>");
+                            contador=0;
+                        }
+                        
+                    }
+                
+                document.write("</table>");
+                </script>
+    
+</body>
+
+</html>

@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+   var letra="";
+   var letras= new Array;
+   var contador=0;
+    var inter=setInterval(function(){
+        var dni=prompt("INDTRODUZCA EL DNI");
+        if(dni!=-1){
+        dni=parseInt(dni);
+        var resto= dni%23;
+        console.log(resto);
+        switch(resto){
+            case 0:
+            letras[contador]="T";
+            break;
+            case 1:
+            letras[contador]="R";
+            break;
+            case 2:
+            letras[contador]="W";
+            break;
+            case 3:
+            letras[contador]="A";
+            break;
+            case 4:
+            letras[contador]="G";
+            break;
+            case 5:
+            letras[contador]="M";
+            break;
+            case 6:
+            letras[contador]="Y";
+            break;
+            case 7:
+            letras[contador]="F";
+            break;
+            case 8:
+            letras[contador]="P";
+            break;
+            case 9:
+            letras[contador]="D";
+            break;
+            case 10:
+            letras[contador]="X";
+            break;
+            case 11:
+            letras[contador]="B";
+            break;
+            case 12:
+            letras[contador]="N";
+            break;
+            case 13:
+            letras[contador]="J";
+            break;
+            case 14:
+            letras[contador]="Z";
+            break;
+            case 15:
+            letras[contador]="S";
+            break;
+            case 16:
+            letras[contador]="Q";
+            break;
+            case 17:
+            letras[contador]="V";
+            break;
+            case 18:
+            letras[contador]="H";
+            break;
+            case 19:
+            letras[contador]="L";
+            break;
+            case 20:
+            letras[contador]="C";
+            break;
+            case 21:
+            letras[contador]="K";
+            break;
+            case 22:
+            letras[contador]="E";
+            break;
+            default: letras[contador]="DNI INCORRECTO";
+            break;
+        }
+        contador++;
+        console.log(letras);
+        }
+        else{
+            console.log("entra al clear");
+            for(var i=0; i<contador;i++){
+                document.write("DNI "+contador+" LETRA  :");
+                document.write(letras[i]+"<br>");
+            }
+            clearInterval(inter);
+        }
+    },5000);
+   
+
+    
+    </script>
+    
+</body>
+</html>
