@@ -56,6 +56,14 @@ main{
     height: 2000px;
     
 }
+#caja-portada{
+
+}
+#img-portada{
+    width: 100%;
+    max-height: 500px;
+}
+
 section{
     padding: 10px;
     background-color: #ffffff;
