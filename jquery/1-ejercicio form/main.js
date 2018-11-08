@@ -15,10 +15,12 @@ $("#boton").click(function(){
     var bool2=document.getElementById("error-form2");
    
     if($("#nombre").val()==""){
-        if(bool1==null){ 
+       // if(bool1==null){ 
         $("#nombre").after("<span id='error-form1' style='color:red'>El nombre esta vacio</span>");
-        }else{
-        }
+        
+       // }else{
+            
+       // }
 
     }else{
         $('#error-form1').fadeOut(1000);
@@ -27,11 +29,11 @@ $("#boton").click(function(){
 
 
     if($("#apellido").val()==""){
-        if(bool1==null){ 
+       // if(bool2==null){ 
         $("#apellido").after("<span id='error-form2' style='color:red'>El apellido esta vacio</span>");
-        }else{
+      //  }else{
 
-        }
+       // }
 }else{
     $('#error-form2').fadeOut(1000);
     }
