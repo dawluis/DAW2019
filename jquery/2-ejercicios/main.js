@@ -11,8 +11,6 @@ $(document).ready(function(){
 
 */
 
-
-
 var boton= document.getElementById("boton-banner");
 var banner= document.getElementById("banner");
 
