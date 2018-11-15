@@ -58,6 +58,12 @@ section{
     flex: 80%;
     transition: 600ms;
 }
+.marcado{
+    background-color: blue;
+    color: white;
+}
+
+
 .imagen-replace{
     border-radius: 20px;
     display: inline-block;

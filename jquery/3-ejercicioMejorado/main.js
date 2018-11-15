@@ -13,8 +13,6 @@ $(document).ready(function(){
 
 var imagenes= document.querySelectorAll("#principal img");
 
-
-
 for(var i=0; i < imagenes.length; i++){
 
     imagenes[i].addEventListener("click", replace , false);
@@ -22,21 +20,17 @@ for(var i=0; i < imagenes.length; i++){
 }
 
 function replace (e){
-   
     switch(e.target.id){
         case "imagen-1":
+        $('#imagen-1').replaceWith('<img id="imagen-4" src="img/4.png" alt="" value="3"><br>');
+        break;
+        case "imagen-2":
+        $('#imagen-2').replaceWith('<img id="imagen-4" src="img/4.png" alt="" value="3"><br>');
+        break;
+        case "imagen-3":
+        $('#imagen-3').replaceWith('<img id="imagen-4" src="img/4.png" alt="" value="3"><br>');
         break;
     }
 }
-
-
-function replace1(){
-
-    $('#imagen-1').replaceWith('<img id="imagen-4" src="img/4.png" alt="" value="3"><br>');
-
-}
-
-
-
 
 });

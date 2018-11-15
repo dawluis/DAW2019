@@ -10,8 +10,43 @@ $(document).ready(function(){
 .replaceWith() Cambiar e contenido de lo que hay por lo que le ponga
 .addClass() Añadir nombre de una clase
 .removeClass() Eliminar clase 
-
 */
+
+$("#rrss").click(function(){
+    $(".link-noticias").removeClass("marcado");
+    $(".link-otros").removeClass("marcado");
+    $(".link-redes").addClass("marcado");
+});
+
+$("#info").click(function(){
+    $(".link-redes").removeClass("marcado");
+    $(".link-otros").removeClass("marcado");
+    $(".link-noticias").addClass("marcado");
+});
+$("#otros").click(function(){
+    $(".link-redes").removeClass("marcado");
+    $(".link-noticias").removeClass("marcado");
+    $(".link-otros").addClass("marcado");
+});
+/************************************************ */
+$("#deportes").click(function(){
+    $(".link-deportes").toggleClass("marcado");
+
+});
+
+$("#empleo").click(function(){
+    $(".link-empleo").toggleClass("marcado");
+
+});
+$("#apuestas").click(function(){
+    $(".link-apuestas").toggleClass("marcado");
+
+});
+
+
+
+
+
 
 
 
