@@ -50,12 +50,9 @@ footer{
         background: blue;
     }
 
-
-
 }
 @media all and (max-width:768px){
     .item{
-        width: 100%;
         background: green;
         margin: 0 auto;
     }
@@ -70,32 +67,21 @@ footer{
 
 }
 
+@media all and (max-width:400px){
+    .item{
+        background: yellow;
+        width: 100%;
+    }
+    #container{
+        grid-template-rows: 100px 1fr 100px 100px;
+        grid-template-areas: 
+        "header header"
+        "main main"
+        "aside aside"
+        "footer footer";
+    }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+}
 
 
 /*
