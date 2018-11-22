@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <title>Document</title>
+    <style>
+        *{
+            transition: all 300ms;
+        }
+    .item{
+        display: flex;
+        color: white;
+        font-size: 40px;
+        display: inline-block;
+        margin: 1px;
+        border: 1px solid #000;
+        width: 200px;
+        height: 200px;
+        background: blue;
+        transition: all 300ms;
+    }
+    /*.paso:hover{
+        height: 400px;
+        transition: all 900ms;
+    }*/
+    .clas{
+        margin: 10px;
+        border: 2px solid #000;
+        width: 100%;
+        height: 300px;
+        transition: all 2000ms;
+    }
+    .redo{
+        border-radius: 300px;
+        transition: all 1000ms;
+    }
+    .abajo{
+        transition: all 1000ms;
+        position: absolute;
+        bottom: 1px;
+        right: 1px;
+    }
+    </style>
+    
+</head>
+<body>
+    <div class="item" id="1grande"></div>
+    <div class="item paso" id="2pequeno"></div>
+    <div class="item" id="tres"></div>
+    <div class="item" id="cuatro"></div>
+    <div class="item" id="cinco">innerHTML</div>
+    <div class="item" id="seis">append</div>
+    <div class="item" id="siete">before</div>
+    <div class="item" id="ocho">remove</div>
+    <div class="item" id="nueve">replazame</div>
+    <div class="item" id="diez">cambia pos</div>
+    <input type="text" id="texto">
+</body>
+<script>
+    /*
+.text(inserta texto)
+.html(inserta texto, cambiandolo)
+.append(inserta texto, detras de lo que haya)
+.prepend (inserta texte, delante de lo que haya)
+.before( inserta antes)
+.after(inserta elemento despues de lo que haya)
+.remove()
+.replaceWith() Cambiar e contenido de lo que hay por lo que le ponga
+.addClass() Añadir nombre de una clase
+.removeClass() Eliminar clase 
+*/
+    var objetivo;
+    var uno=document.getElementById("uno");
+    var dos=document.getElementById("dos");
+    var cinco=document.getElementById("cinco");
+    var texto= document.getElementById("texto");
+    var todosItems=document.querySelectorAll(".item");
+    console.log(todosItems.length);
+    
+    $(".item").click(function(e){
+        console.log(e.target.id);
+        var identifica;
+        var ope="grande";
+        if(e.target.id=="1grande"){
+            identifica="#1grande";
+            ope="grande";
+        }else if(e.target.id=="2pequeno"){
+            identifica="#2pequeno";
+            ope="peque";
+        }
+        if(ope=="grande"){
+            $(identifica).css("width", "100%");
+        }else if(ope=="peque"){
+            $(identifica).css("width", "10%");
+        }
+        
+
+
+    });
+    /*uno.onclick=function(){
+        alert("asda");
+    }*/
+/*
+    $('#uno').click(function(){
+        $('#uno').css("width", "300px");
+    });
+    
+    dos.addEventListener("click", function(){
+        if(dos.style.height=="300px"){
+            dos.style.height="200px";
+        }else{
+            dos.style.height="300px";
+        }
+    });
+
+    $('#tres').click(function(){
+        $('#tres').toggleClass("clas");
+    });
+    
+    $('#cuatro').mouseover(function(){
+      $('#cuatro').toggleClass("redo");
+    });
+    $('#cuatro').mouseout(function(){
+      $('#cuatro').toggleClass("redo");
+    });
+
+     $('#cinco').dblclick(function(){
+      cinco.innerHTML="adsas";
+      texto.value="hola";
+    });
+    $('#seis').click(function(){
+        $('#seis').append("<br>sdas");
+    });
+    $('#siete').click(function(){
+        $('#siete').before("<br>sdas");
+    });
+    $('#ocho').click(function(){
+        $('#ocho').remove();
+    });
+    $('#nueve').click(function(){
+        $('#nueve').replaceWith("dasdasd");
+    });
+    $('#diez').click(function(){
+        $('#diez').toggleClass("abajo");
+    });*/
+    </script>
+</html>
