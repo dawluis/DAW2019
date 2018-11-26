@@ -59,6 +59,11 @@ section{
     transition: 600ms;
     text-align: center;
 }
+
+section img{
+    margin: 5px;
+}
+
 .marcado{
     background-color: blue;
     color: white;
