@@ -17,14 +17,13 @@ function uno(a){
         break;
 
         case 4:
-            if(principal.style="background-color"=='red'){
-                console.log("ha entrado al blaco");
-                principal.style = "background-color:white";
+            if(principal.style.backgroundColor=="red"){
+                console.log("ha entrado al blanco");
+                principal.style.background="white";
             
             }else{
                 console.log("ha entrado al rojo");
-                principal.style="background-color:red";
-                alert("rojo");
+                principal.style.background="red";
             }
         break;
 
