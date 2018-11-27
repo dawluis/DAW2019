@@ -106,8 +106,8 @@ aside{
     margin-left:5px;
     background-color: #14568b;
     color: white;
-    justify-content: center;
-    align-items: center;
+    text-align: center;
+    padding: 10px;
     flex:20%;
 }
 footer{
