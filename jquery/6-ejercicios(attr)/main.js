@@ -26,7 +26,6 @@ $('#grandes').click(function(){
     for(var i=0 ; i < imagenes.length; i++){
         if((imagenes[i].id=="1")||(imagenes[i].id=="3")||(imagenes[i].id=="6")||(imagenes[i].id=="9")||(imagenes[i].id=="15")||(imagenes[i].id=="16")||(imagenes[i].id=="12")||(imagenes[i].id=="18")||(imagenes[i].id=="17")||(imagenes[i].id=="11")){
             imagenes[i].setAttribute("src","imagenes/color/"+imagenes[i].id+".jfif");
-            //console.log("entra al 1");
         }else{
             imagenes[i].setAttribute("src","imagenes/bn/"+imagenes[i].id+".jpg");
            
@@ -50,7 +49,6 @@ $('#peques').click(function(){
     for(var i=0 ; i < imagenes.length; i++){
         if((imagenes[i].id=="5")||(imagenes[i].id=="7")||(imagenes[i].id=="8")||(imagenes[i].id=="14")||(imagenes[i].id=="19")){
             imagenes[i].setAttribute("src","imagenes/color/"+imagenes[i].id+".jfif");
-            //console.log("entra al 1");
         }else{
             imagenes[i].setAttribute("src","imagenes/bn/"+imagenes[i].id+".jpg");
            
