@@ -53,20 +53,21 @@ main{
     
 }
 section{
-    padding: 10px;
     background-color: #ffffff;
     flex: 80%;
     transition: 600ms;
     text-align: center;
+    padding: 5px;
 }
 
 section img{
-    margin: 5px;
+    margin: 0px;
+    transition: 1600ms;
 }
 
+
 .marcado{
-    background-color: blue;
-    color: white;
+   width: 245px;
 }
 
 
