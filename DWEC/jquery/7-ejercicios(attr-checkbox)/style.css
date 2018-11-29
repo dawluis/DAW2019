@@ -60,6 +60,10 @@ section{
     padding: 5px;
 }
 
+.ocultar{
+    visibility: hidden;
+}
+
 section img{
     margin: 0px;
     transition: 1600ms;
