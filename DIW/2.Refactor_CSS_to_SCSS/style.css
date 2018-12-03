@@ -50,34 +50,27 @@ ul {
   font-size: 62px;
   -webkit-margin-before: 0;
   padding-top: 40px;
+}
+
+.main > * {
   padding-left: 30px;
 }
 
-.main ul {
-  padding-left: 30px;
-}
-
-.main li {
+.main ul li {
   font-size: 0.85rem;
 }
 
 .main p {
-  padding-left: 30px;
   width: 55%;
   min-width: 550px;
 }
 
-.main video {
-  padding-left: 30px;
-}
-
-.main:hover {
-  text-decoration: underline;
-}
-
 .main a {
   color: inherit;
-  padding-left: 30px;
   text-decoration: none;
+}
+
+.main a:hover {
+  text-decoration: underline;
 }
 /*# sourceMappingURL=style.css.map */

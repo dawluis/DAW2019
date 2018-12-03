@@ -1,9 +1,10 @@
 $padding-left:30px;
-
+$body_color: #ffffff;
+$foreground: #FFCFCF;
 html, body {
     margin: 0;
     font-family: Arial;
-    color: #ffffff;
+    color: $body_color;
   }
   
   p, a {
@@ -21,54 +22,56 @@ html, body {
   }
   
   .container {
-    min-height: 100%;
-    display: flex;
-    .nav {
-    width: 15%;
-    min-width: 140px;
-    color: #FFCFCF;
-    padding-top: 55px;
-    padding-right: $padding-left;
-    text-align: center;
-    h4 {
-        -webkit-margin-before: 0;
-        margin-left: 50px;
-      }
-  }
-  
-  }
+      min-height: 100%;
+      display: flex;
+      
+      .nav {
+      width: 15%;
+      min-width: 140px;
+      color: $foreground;
+      padding-top: 55px;
+      padding-right: $padding-left;
+      text-align: center;
+      h4 {
+          -webkit-margin-before: 0;
+          margin-left: 50px;
+        }
+    }
+    
+    }
 
   .main {
     width: 85%;
     min-height: 750px;
     min-width: 600px;
-    background-color: #FFCFCF;
+    background-color: $foreground;
         h1 {
             font-size: 62px;
             -webkit-margin-before: 0;
             padding-top: 40px;
-            padding-left: $padding-left;
+           
+        }
+        >*{
+          padding-left: $padding-left;
         }
         ul {
-            padding-left: $padding-left;
+            
+            li {
+              font-size: 0.85rem;
             }
-        li {
-            font-size: 0.85rem;
-          }
+            }
+        
           p {
-            padding-left: $padding-left;
+            
             width: 55%;
             min-width: 550px;
           }
-        video {
-            padding-left: $padding-left;
-          }
-          &:hover{
-            text-decoration: underline;
-          }
+          
           a {
             color: inherit;
-            padding-left: $padding-left;
             text-decoration: none;
+            &:hover{
+              text-decoration: underline;
+            }
           }
   }
