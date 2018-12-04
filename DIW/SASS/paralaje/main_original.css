@@ -27,7 +27,7 @@ html, body {
   -webkit-perspective: 1px;
           perspective: 1px;
   overflow-x: hidden;
-  overflow-y: hidden;
+  overflow-y: auto;
 }
 
 #landscape h1, #monkeys h1 {
