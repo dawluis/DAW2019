@@ -7,7 +7,7 @@ $(function(){
     $('.item label').siblings('label').css('color','white');
     $(":contains('€'),input").css('color','green');
     $("div:empty").css('background-color','yellow');
-    $(".item").children().last().css('background-color','red');
-    $(".item:first-child").css('background-color','red');
+    $(".item").last().css('background-color','red');
+    $(".item").first().css('background-color','red');
     $(":contains('Camiseta')").siblings('img').css('border-color','green');
 });
