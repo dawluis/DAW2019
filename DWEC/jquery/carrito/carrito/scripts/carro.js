@@ -9,7 +9,5 @@ $(function(){
     $("div:empty").css('background-color','yellow');
     $(".item").children().last().css('background-color','red');
     $(".item:first-child").css('background-color','red');
-    $('item img').each(function(indice, elemento){
-        console.log(indice+ " " +elemento);
-    });
+    $(":contains('Camiseta')").siblings('img').css('border-color','green');
 });
