@@ -51,6 +51,7 @@ input.cantidad {
 	background-image:url(../img/delete-hover.png);
 }
 
+
 a.minus, a.add, a.delete {
 	display: block;
     border: 0 none;
