@@ -1,0 +1,48 @@
+@import "helper/placeholders";
+@import "helper/mixins";
+@import "helper/variables";7
+
+h1 {
+  font-family: Arial, Helvetica, sans-serif;
+  @include center;
+}
+
+.banner {
+  font-family: Arial, Helvetica, sans-serif, cursive;
+  height: 400px;
+  background-image: url($lemonade-banner);
+  border: {
+    top: $border;
+    bottom: $border;
+  } 
+  .absolute{
+    position: absolute;
+  }
+
+  .slogan {
+    background-color: $translucent-white;
+    border: 4px solid black;
+    top: 200px;
+    left: 25%;
+    line-height: 200px;
+    @include dimensions(50%, 200px);
+
+    span {
+      @extend .absolute;
+      @include center;
+      width: 40%;
+      left: 30%;
+    }
+  }
+}
+
+.container {
+  font-family: Arial, Helvetica, sans-serif, cursive;
+
+  .icon {
+    display: inline-block;
+    margin: 2%;
+    border: $border;
+    @include dimensions(300px, 300px);
+  }
+}
