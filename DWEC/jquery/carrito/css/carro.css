@@ -108,7 +108,7 @@ a.delete {
 #cart_container 
 {
 	margin: 0 auto;
-	width: 495px;
+	width: 100%;
 }
 
 #cart_title span 
@@ -142,6 +142,7 @@ a.delete {
 
 #cart_items 
 {
+	overflow: scroll;
 	height: 190px;
 	width: 100%;
 	position: relative;
