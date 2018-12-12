@@ -1,8 +1,5 @@
  
-@mixin center{
-  text-align: center;
-  vertical-align: middle;
-}
+
 
 @mixin dimensions($width, $height){
   width: $width;

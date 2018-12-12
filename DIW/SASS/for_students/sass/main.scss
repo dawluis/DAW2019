@@ -1,10 +1,10 @@
 @import "helper/placeholders";
 @import "helper/mixins";
-@import "helper/variables";7
+@import "helper/variables";
 
 h1 {
   font-family: Arial, Helvetica, sans-serif;
-  @include center;
+ @extend %center; 
 }
 
 .banner {
@@ -15,9 +15,7 @@ h1 {
     top: $border;
     bottom: $border;
   } 
-  .absolute{
-    position: absolute;
-  }
+  
 
   .slogan {
     background-color: $translucent-white;
@@ -28,8 +26,8 @@ h1 {
     @include dimensions(50%, 200px);
 
     span {
-      @extend .absolute;
-      @include center;
+      @extend %absolute;
+      @extend %center;
       width: 40%;
       left: 30%;
     }
