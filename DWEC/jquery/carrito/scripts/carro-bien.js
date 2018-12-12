@@ -2,10 +2,11 @@ $(function(){
     var sumaPrecio=0;
     var iStock;
     var ArticulosComprados;
+    var bool=false;
+    
     $('.item').click(function(e){
-         /*****************STOCK*****************************************/
+         /*****************STOCK**************************************** */
         var x=e.target.parentNode.id;
-        console.log(x);
         var stock=$('#'+x).children("label:contains('Stock')").text();
         var partes= stock.split(" ");
         iStock=parseInt(partes[1]);
@@ -14,13 +15,11 @@ $(function(){
         var sPrecio=parseInt(precio.substring(0,2));
         /**********************ARTICULOS COMPRADOS*********************************** */
         ArticulosComprados=parseInt($('#citem').val());
-        
-        if(iStock <= 1){
+        iStock--;
+         console.log(iStock);
+         
+        if(iStock == 0){
             $('#'+x).children("label:contains('Stock')").text("Stock 0").addClass('agotado');
-        }else{
-            //Baja el stock
-            iStock--;
-            console.log(iStock);
             $('#'+x).children("label:contains('Stock')").text("Stock "+iStock);
             //Suben los articulos comprados
             ArticulosComprados++;
@@ -30,7 +29,25 @@ $(function(){
             $('#cprice').attr("value",sumaPrecio+" €");
             //Copia
            copia(x);
+        }else if(iStock < 0){
+            iStock=0;
+        }else{
+            //Baja el stock
+            
+            $('#'+x).children("label:contains('Stock')").text("Stock "+iStock);
+            //Suben los articulos comprados
+            ArticulosComprados++;
+            $('#citem').val(ArticulosComprados);
+            //Se suma el precio de los objetos clickados
+            sumaPrecio=sumaPrecio+sPrecio;
+            $('#cprice').attr("value",sumaPrecio+" €");
+            //Copia
+           copia(x);
+
+
         }
+        
+
     });
 
 
@@ -42,16 +59,17 @@ $(function(){
         var $delete = $('<a class="delete"></a>').fadeIn('slow');
         copia.prepend($delete);
         $('#cart_items').prepend(copia);
-        
         /*************************ELIMINAR ITEM *****************-********/
         $delete.click(function(){
             //OBTENEMOS ID
             var padre=$(this).parent().attr("id");
             var id= padre.substring(1);
             //AUMENTAMOS EL STOCK
-            var stockPadre=$('#'+padre).children("label:contains('Stock')").text();
+            var stockPadre=$('#'+id).children("label:contains('Stock')").text();
             var partesPadre= stockPadre.split(" ");
-            iStockPadre=parseInt(partesPadre[1]);
+            console.log(partesPadre[1]);
+            var iStockPadre=parseInt(partesPadre[1]);
+           
             if(iStockPadre==0){
                     $('#'+id).children("label:contains('Stock')").removeClass("agotado");
                     iStockPadre++;
@@ -83,11 +101,5 @@ $(function(){
         });
        
     }
-
-
-
-
-
-
 });
 

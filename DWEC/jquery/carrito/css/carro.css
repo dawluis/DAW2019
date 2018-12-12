@@ -142,6 +142,7 @@ a.delete {
 
 #cart_items 
 {
+	transition: all 500ms;
 	overflow: scroll;
 	height: 190px;
 	width: 100%;
