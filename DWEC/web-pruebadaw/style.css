@@ -81,6 +81,7 @@ section{
     background-color: #ffffff;
     flex: 80%;
     transition: 600ms;
+    height: 5000px;
 }
 article{
     display: flex;
@@ -115,6 +116,30 @@ article img{
     flex: 90%;
     border-radius: 1px 10px 1px 1px;
 }
+
+@keyframes fade-in{
+    from{opacity: 0; transform: scale(.7,.7)}
+    to{opacity: 1;}
+}
+.fade-in-element{
+    animation: fade-in 1.4s;
+}
+
+.hidden {
+    opacity: 0;
+}
+
+#efecto{
+    border: 1px solid #000;
+    height: 200px;
+    width: 200px;
+    background-color: grey;
+    border-radius:150px;
+    line-height: 200px;
+    color: white;
+}
+
+
 
 aside{
     padding: 10px;
