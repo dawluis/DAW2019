@@ -68,7 +68,7 @@ main{
     min-height: 1000px;
     
 }
-#caja-portada{
+#caja-portada12{
 
 }
 #img-portada{
@@ -117,27 +117,29 @@ article img{
     border-radius: 1px 10px 1px 1px;
 }
 
-@keyframes fade-in{
-    from{opacity: 0; transform: scale(.7,.7)}
-    to{opacity: 1;}
-}
-.fade-in-element{
-    animation: fade-in 1.4s;
-}
+
+
 
 .hidden {
     opacity: 0;
 }
 
 #efecto{
+    background: url('img/landscape.jpg') no-repeat center center fixed;
+    -webkit-background-size: cover;
     border: 1px solid #000;
+    height: 100vh;
+    overflow-x: hidden;
+    overflow-y: auto;
+    perspective: 1px;
     height: 200px;
-    width: 200px;
+    width: 0px;
     background-color: grey;
-    border-radius:150px;
-    line-height: 200px;
-    color: white;
+    text-align: center;
+    color: black;
 }
+
+
 
 
 
