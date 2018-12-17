@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Efectos</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="js/jquery-3.3.1.min.js"></script>
+    <style>
+        #espacio{
+            height: 2000px;
+            background: white;
+        }
+        .fade-in-element{
+        animation: fade-in 1.4s;
+        }
+        @keyframes fade-in{
+            from{
+                opacity: 0; 
+                transform: scale(.7,.7);
+            }
+            to{
+               opacity: 1;
+               background: white;
+            }
+        }
+    </style>
+</head>
+<body>
+        <button id="cosas">cosas</button>
+        <div id="espacio">Espacio</div>
+        <div id="efecto">ESTE DIV TIENE EFECTO</div>
+        <div id="espacio">Espacio</div>
+    <script src="js/efectos.js"></script>
+</body>
+</html>

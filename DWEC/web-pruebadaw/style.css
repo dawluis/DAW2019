@@ -68,7 +68,7 @@ main{
     min-height: 1000px;
     
 }
-#caja-portada{
+#caja-portada12{
 
 }
 #img-portada{
@@ -81,6 +81,7 @@ section{
     background-color: #ffffff;
     flex: 80%;
     transition: 600ms;
+    height: 5000px;
 }
 article{
     display: flex;
@@ -115,6 +116,32 @@ article img{
     flex: 90%;
     border-radius: 1px 10px 1px 1px;
 }
+
+
+
+
+.hidden {
+    opacity: 0;
+}
+
+#efecto{
+    background: url('img/landscape.jpg') no-repeat center center fixed;
+    -webkit-background-size: cover;
+    border: 1px solid #000;
+    height: 100vh;
+    overflow-x: hidden;
+    overflow-y: auto;
+    perspective: 1px;
+    height: 200px;
+    width: 0px;
+    background-color: grey;
+    text-align: center;
+    color: black;
+}
+
+
+
+
 
 aside{
     padding: 10px;
