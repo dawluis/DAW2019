@@ -16,7 +16,7 @@ function muestraInformacion1(event){
   }
   if(coordenadaY > altura/2 && coordenadaX > ancho/2){
     principal.innerHTML="<h2>derecha abajo</h2>";
-  }
+  } 
 }
 document.onclick= muestraInformacion1;
 document.onmousemove= muestraInformacion1;
