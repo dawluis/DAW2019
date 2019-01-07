@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+    .cosa{
+        display: inline-block;
+    }
+    .cosa2{
+        background-color: green;
+        margin-left: -36px;
+    }
+    
+    li{
+        list-style: none;
+    }
+    
+    
+    </style>
+</head>
+<body>
+    <nav>
+        <ul>
+            <li class="cosa">
+                cosa
+                <ul class="cosa2" style="display:none">
+                    <li>cosa1</li>
+                    <li>cosa2</li>
+                </ul>
+        </ul>
+    </nav>
+    <script>
+        $(function(){
+            $('.cosa').mouseover(function(){
+                $('.cosa2').fadeIn();
+
+            });
+            $('.cosa2').mouseover(function(){
+                $('.cosa2').fadeIn();
+
+            });
+            $('.cosa').mouseout(function(){
+                $('.cosa2').fadeOut();
+
+            });
+            $('.cosa2').mouseout(function(){
+                $('.cosa2').fadeOut();
+
+            });
+            
+        });
+        
+        </script>
+</body>
+</html>
