@@ -1,8 +1,76 @@
-.container-fluid div{
-    min-height: 50px;
+@mixin position($pos) {
+    display: flex;
+    align-items: center;
+    justify-content: $pos;
+}
+%center{
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 
 div{
     border: 1px solid white;
+}
+
+.primero{
+    background-color: brown;
+    @media screen and (min-width:576px) {
+        background-color: aqua;
+    }
+    @media screen and (min-width:768px) {
+        background-color: green; 
+    }
+}
+
+.segundo{
+    :first-child{
+        @include position(flex-start);
+    }
+    :nth-child(2){
+        @include position(center);
+    }
+    :nth-child(3){
+        @include position(flex-end);
+       
+    }
+
+    div{
+        color: white;
+        font-size: 4rem;
+        min-height: 150px;
+        background-color: rgb(91, 91, 177);
+    }
+    @media screen and (min-width:576px) {
+        :first-child{
+            @include position(flex-start);
+        }
+        :nth-child(2){
+            @include position(flex-end);
+        }
+        :nth-child(3){
+            background-color: green;
+            @include position(center);
+           
+        }
+    }
+    @media screen and (min-width:768px) {
+        div{
+            background-color: rgb(146, 50, 50);
+            height: 500px;
+            border: 10px solid white;
+        }
+        :first-child{
+            @include position(center);
+        }
+        :nth-child(2){
+            @include position(center);
+        }
+        :nth-child(3){
+            background-color: rgb(146, 50, 50);
+            @include position(center);
+           
+        }
+    }
 }
