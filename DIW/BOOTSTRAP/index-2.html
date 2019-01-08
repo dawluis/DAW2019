@@ -8,14 +8,33 @@
     
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="bootstrap/css/bootstrap.css">
+
+    <style>
+    .seg{
+        height: 150px;
+        
+    }
+    .row div{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+    }
+    
+    .tipo{
+        height: 50px;
+    }
+    
+    </style>
    
     
     <title>Document</title>
 </head>
 <body>
-    <header class="bg-primary">BOOTSTRAP </header>
     <div class="container-fluid">
         <div class="row">
+                <div class="bg-success text-center col-12">Header</div>
+        </div>
+        <div class="row seg">
           <div class="bg-info col-6 col-sm-3 offset-md-3">1</div>
           <div class="bg-info col-6 col-sm-3 mr-md-3">2</div>
           <div class="bg-info col-6 col-sm-3">3</div>
@@ -23,27 +42,27 @@
         </div>
        
         <div class="row">
-                <div class="col-12 bg-danger d-none d-sm-block d-md-none">Tablet</div>
+                <div class=" text-center col-12 bg-primary d-none d-sm-block d-md-none">Tablet</div>
         </div>
         
-        <div class="row">
-                <div class="bg-info col-6 col-sm-3 order-md-4">a</div> 
-                <div class="bg-info col-6 col-sm-3 order-md-2">b</div>
-                <div class="bg-info col-6 col-sm-3 order-md-3">c</div>
-                <div class="bg-info col-6 col-sm-3 order-md-1">d</div>
+        <div class="row seg">
+                <div class="bg-secondary col-6 col-sm-3 order-md-4">a</div> 
+                <div class="bg-secondary col-6 col-sm-3 order-md-2">b</div>
+                <div class="bg-secondary col-6 col-sm-3 order-md-3">c</div>
+                <div class="bg-secondary col-6 col-sm-3 order-md-1">d</div>
         </div>
         <div class="row">
-                <div class="col-12 bg-danger d-none d-md-block">Desktop</div>
+                <div class="col-12 text-center bg-primary d-none d-md-block">Desktop</div>
         </div>
         <div class="row">
-                <div class="col-12 bg-danger d-xs-block d-sm-none">Mobile</div>
+                <div class=" text-center col-12 bg-primary d-xs-block d-sm-none">Mobile</div>
+        </div>
+        <div class="row seg">
+                <div class="bg-warning col-12 col-sm-6 order-md-4">:D</div>
+                <div class="bg-warning col-6 col-sm-6 order-md-2 d-none d-sm-block">:(</div>
         </div>
         <div class="row">
-                <div class="bg-info col-12 col-sm-6 order-md-4">:D</div>
-                <div class="bg-info col-6 col-sm-6 order-md-2 d-none d-sm-block">:(</div>
-        </div>
-        <div class="row">
-                <div class="bg-warning d-none d-sm-block col-12">Footer</div>
+                <div class="bg-success text-center d-none d-sm-block col-12">Footer</div>
         </div>
 
     </div>
