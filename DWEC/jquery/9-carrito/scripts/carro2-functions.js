@@ -63,7 +63,6 @@ $(function(){
             var partesPadre= stockPadre.split(" ");
             console.log(partesPadre[1]);
             var iStockPadre=parseInt(partesPadre[1]);
-           
             if(iStockPadre==0){
                     $('#'+id).children("label:contains('Stock')").removeClass("agotado");
                     iStockPadre++;

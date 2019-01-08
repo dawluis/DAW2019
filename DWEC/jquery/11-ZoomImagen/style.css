@@ -1,13 +1,18 @@
 *{
     box-sizing: border-box;
 }
+h4{
+    margin: 0px;
+    text-align: left;
+
+}
 
 body{
+    max-width: 1200px;
     font-family: helvetica;
     box-sizing: border-box;
     width: 100%;
-    margin-left: 0px;
-    margin-top: 0px;
+    margin: 0 auto;
     background: #b8b8b8;
 }
 header{
@@ -38,78 +43,68 @@ nav{
     color: white;
     text-align: center;
     flex: 1;
-    background-color: #222;
+    background-color: rgb(14, 17, 63);
+    max-height: 28px;
+    transition: 200ms;
+}
+.itemenu:hover{
+    background-color: #f6be4f;
+    font-weight: bold;
+    font-size: 20px;
 }
 nav a{
     color: white;
     text-decoration: none;
+    transition: 200ms;
+}
+nav a:hover{
+    color: rgb(66, 66, 66);
+    font-weight: bold;
+    font-size: 22px;
 }
 main{
     color: #040111;
-    margin: 5px 5px;
     background: #b8b8b8;
     display: flex;
-    height: 2000px;
+    min-height: 1000px;
     
 }
+
+
 section{
+    padding: 20px;
     background-color: #ffffff;
     flex: 80%;
     transition: 600ms;
-    text-align: center;
-    padding: 5px;
 }
 
-section img{
-    margin: 0px;
-    transition: 1000ms;
-    transition-timing-function: ease-in;
-}
 
-.imagen-replace{
-    border-radius: 20px;
-    display: inline-block;
-    width: 250px;
-    transition: 300ms;
-}
-article{
-    border-radius: 10px;
-    display: flex;
-    border: 1px black solid;
-}
-
-article p a{
-    color: rgb(86, 197, 104);
-    text-decoration: none;
-
-}
-
-article img{
-    max-width: 100px;
-    max-height:100px;
-}
-.img-article{
-    flex: 10%;
-}
-.texto-article{
-    background:#98af4c77;
-    padding-left: 10px;
-    flex: 90%;
-}
 
 aside{
-    margin-left:5px;
+    padding: 10px;
     background-color: #14568b;
     color: white;
-    text-align: center;
-    padding: 10px;
     flex:20%;
+    text-align: center;
+}
+.img-aside{
+    margin-top: 0px;
+    width: 90%;
+    text-align: center;
+    border-radius: 2px;
+
+}
+aside ul{
+    text-align: left;
+    margin-left: 0px;
 }
 footer{
+    color: white;
     display: flex;
     justify-content: center;
     align-items: center;
     height: 100px;
-    background-color: #040111;
-    margin: 10px 20px;
+    background-color: rgb(51, 51, 51);
+    margin: 0px;
+    width: 100%;
 }
