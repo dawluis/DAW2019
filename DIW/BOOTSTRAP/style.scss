@@ -3,17 +3,9 @@
     align-items: center;
     justify-content: $pos;
 }
-%center{
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-
 div{
     border: 1px solid white;
 }
-
 .primero{
     background-color: brown;
     @media screen and (min-width:576px) {
@@ -23,7 +15,6 @@ div{
         background-color: green; 
     }
 }
-
 .segundo{
     :first-child{
         @include position(flex-start);
@@ -35,7 +26,6 @@ div{
         @include position(flex-end);
        
     }
-
     div{
         color: white;
         font-size: 4rem;
