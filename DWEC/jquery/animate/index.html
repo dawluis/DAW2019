@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <title>Document</title>
+</head>
+<body>
+    <button id="but">boton</button>
+    <div id="hola">hola</div>
+    <script type="text/javascript">
+        $(document).ready(function(){
+            $('#hola').hide();
+            $('#but').mouseover(function(){
+
+                $('#hola').show(500);
+
+            });
+            
+            $('#but').mouseout(function(){
+                $('#hola').slideToggle(500,'swing');
+                
+            });
+        });
+    </script>
+</body>
+
+</html>
