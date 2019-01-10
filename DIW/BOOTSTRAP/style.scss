@@ -1,8 +1,101 @@
-.container-fluid div{
-    min-height: 50px;
+@mixin position($pos) {
+    display: flex;
+    align-items: center;
+    justify-content: $pos;
 }
-
-
 div{
     border: 1px solid white;
+}
+.primero{
+    div{
+        @include position(center);
+    }
+    background-color: rgb(212, 186, 186);
+    @media screen and (min-width:576px) {
+        div{
+            @include position(flex-start);
+        }
+        background-color: aqua;
+        @include position(flex-start);
+    }
+    @media screen and (min-width:768px) {
+        background-color: green; 
+    }
+}
+.segundo{
+    :first-child{
+        @include position(flex-start);
+        background-color: rgb(146, 50, 50);
+    }
+    :nth-child(2){
+        @include position(center);
+        background-color: rgb(91, 91, 177);
+    }
+    :nth-child(3){
+        @include position(flex-end);
+        background-color: rgb(146, 50, 50);
+       
+    }
+    div{
+        color: white;
+        font-size: 4rem;
+        height: 150px;
+        
+    }
+    @media screen and (min-width:576px) {
+        :first-child{
+            @include position(flex-start);
+            background-color: rgb(146, 50, 50);
+        }
+        :nth-child(2){
+            
+            background-color: rgb(146, 50, 50);
+            @include position(flex-end);
+        }
+        :nth-child(3){
+            height: 100px;
+            background-color: green;
+            @include position(center);
+           
+        }
+    }
+    @media screen and (min-width:768px) {
+        div{
+            background-color: rgb(146, 50, 50);
+            height: 500px;
+            border: 10px solid white;
+        }
+        :first-child{
+            display: flex;
+            align-items: initial;
+            justify-content: center;
+        }
+        :nth-child(2){
+            display: flex;
+            align-items: initial;
+            justify-content: center;
+        }
+        :nth-child(3){
+            background-color: rgb(146, 50, 50);
+            display: flex;
+            align-items: initial;
+            justify-content: center;
+            height: 500px;
+           
+        }
+    }
+}
+.foot{
+    div{
+        @include position(center);
+    }
+    @media screen and (min-width:768px) {
+        :first-child{
+            @include position(flex-end);
+        }
+        :nth-child(2){
+            @include position(flex-start)
+        }
+        
+    }
 }
