@@ -35,32 +35,67 @@ header h1{
 }
 nav{
     display: flex;
-}
-.itemenu{
-    border-left: 1px white solid;
-    padding: 5px;
-    color: white;
-    text-align: center;
-    flex: 1;
-    background-color: rgb(14, 17, 63);
-    max-height: 28px;
-    transition: 200ms;
-}
-.itemenu:hover{
-    background-color: #f6be4f;
-    font-weight: bold;
-    font-size: 20px;
+    color: rgb(255, 255, 255);
 }
 nav a{
-    color: white;
     text-decoration: none;
-    transition: 200ms;
+    color: rgb(255, 255, 255);
+
 }
 nav a:hover{
-    color: rgb(66, 66, 66);
-    font-weight: bold;
-    font-size: 22px;
+    text-decoration: none;
+    color: rgba(0, 0, 0, 0.623);
+
 }
+nav ul{
+    font-size: 2rem;
+    margin: 0;
+    padding: 0;
+}
+nav li{
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    cursor: pointer;
+
+}
+/*nav .princi li:hover ul{
+    display: block;
+    position: absolute;
+}*/
+nav .princi{
+    flex: 1;
+    position: relative;
+    background-color: rgba(0, 0, 0, 0.623);
+    text-align: center;
+    display: inline-block;
+
+   
+}
+nav .secun{
+    display: none;
+}
+nav .secun{
+    width: 100%;
+    display: none;
+    background-color: rgba(0, 0, 0, 0.295);
+    position: absolute;
+}
+
+nav .terc{
+    width: 100%;
+    display: none;
+    background-color: rgba(0, 0, 0, 0.719);
+    position: absolute;
+    left: 100%;
+    margin-top: -38px;
+}
+
+
+ li:hover{
+    background-color: rgba(58, 57, 57, 0.733);
+}
+
 main{
     color: #040111;
     background: #b8b8b8;
@@ -68,9 +103,7 @@ main{
     min-height: 1000px;
     
 }
-#caja-portada12{
 
-}
 #img-portada{
     margin-bottom: -7px;
     width: 100%;
