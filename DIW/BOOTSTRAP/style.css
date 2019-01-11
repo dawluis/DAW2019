@@ -2,6 +2,19 @@ div {
   border: 1px solid white;
 }
 
+/*PRIMER HTML**/
+.pri {
+  height: 50px;
+}
+
+.seg {
+  height: 150px;
+}
+
+.ter div {
+  height: 100px;
+}
+
 .primero {
   background-color: #d4baba;
 }
