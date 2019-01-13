@@ -4,7 +4,6 @@ $(function(){
     var ArticulosComprados;
     var bool=false;
 
-    
     $('.item').on('click',function(e){
          /*****************STOCK**************************************** */
         var x=e.target.parentNode.id;

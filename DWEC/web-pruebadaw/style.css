@@ -75,25 +75,28 @@ nav .princi{
 nav .secun{
     display: none;
 }
+.secun li{
+    border-bottom: rgba(0, 0, 0, 0.719) solid 1px;
+}
 nav .secun{
     width: 100%;
     display: none;
-    background-color: rgba(0, 0, 0, 0.295);
+    background-color: rgba(0, 0, 0, 0.623);
     position: absolute;
 }
 
 nav .terc{
     width: 100%;
     display: none;
-    background-color: rgba(0, 0, 0, 0.719);
+    background-color: rgba(0, 0, 0, 0.589);
     position: absolute;
     left: 100%;
-    margin-top: -38px;
+    margin-top: -37px;
 }
 
 
  li:hover{
-    background-color: rgba(58, 57, 57, 0.733);
+    background-color: rgba(58, 57, 57, 0.815);
 }
 
 main{
