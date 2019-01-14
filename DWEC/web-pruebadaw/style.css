@@ -18,7 +18,7 @@ header{
     position: relative;
     width: 100%;
     line-height: 100px;
-    background-color: #2196f3;
+    background-color: #008cff;
     top: 0px;
     height: 100px;
 }
@@ -35,15 +35,12 @@ header h1{
 }
 nav{
     display: flex;
-    color: rgb(255, 255, 255);
 }
 nav a{
     text-decoration: none;
-    color: rgb(255, 255, 255);
-
 }
 nav a:hover{
-    text-decoration: none;
+   
     color: rgba(0, 0, 0, 0.623);
 
 }
@@ -51,11 +48,11 @@ nav ul{
     font-size: 2rem;
     margin: 0;
     padding: 0;
+    
 }
 nav li{
     list-style: none;
     margin: 0;
-    padding: 0;
     cursor: pointer;
 
 }
@@ -64,19 +61,30 @@ nav li{
     position: absolute;
 }*/
 nav .princi{
+    color: rgb(255, 255, 255);
     flex: 1;
     position: relative;
     background-color: rgba(0, 0, 0, 0.623);
     text-align: center;
     display: inline-block;
-
+    border-right: 1px white solid;
    
 }
 nav .secun{
     display: none;
+    color: white;
 }
+nav .secun a{
+    color: white;
+}
+nav .terc a{
+    color: white;
+}
+
 .secun li{
-    border-bottom: rgba(0, 0, 0, 0.719) solid 1px;
+    /*border-bottom: rgba(0, 0, 0, 0.719) solid 1px;*/
+    height: 60px;
+    line-height: 60px;
 }
 nav .secun{
     width: 100%;
@@ -88,17 +96,17 @@ nav .secun{
 nav .terc{
     width: 100%;
     display: none;
-    background-color: rgba(0, 0, 0, 0.589);
+    background-color: rgba(0, 0, 0, 0.829);
     position: absolute;
     left: 100%;
-    margin-top: -37px;
+    margin-top: -60px;
 }
 
 
- li:hover{
-    background-color: rgba(58, 57, 57, 0.815);
+ nav li:hover{
+    background-color: rgba(0, 0, 0, 0.507);
+ 
 }
-
 main{
     color: #040111;
     background: #b8b8b8;
@@ -106,18 +114,19 @@ main{
     min-height: 1000px;
     
 }
+#caja-portada{
 
+}
 #img-portada{
     margin-bottom: -7px;
     width: 100%;
 }
 
 section{
-    padding: 20px;
+    padding-top: 20px;
     background-color: #ffffff;
     flex: 80%;
     transition: 600ms;
-    height: 5000px;
 }
 article{
     display: flex;
@@ -135,10 +144,7 @@ article p a{
     padding: 10px;
     color: white;
     border-radius: 3px;
-    
-
 }
-
 article img{
     max-width: 100px;
     max-height:100px;
@@ -152,32 +158,6 @@ article img{
     flex: 90%;
     border-radius: 1px 10px 1px 1px;
 }
-
-
-
-
-.hidden {
-    opacity: 0;
-}
-
-#efecto{
-    background: url('img/landscape.jpg') no-repeat center center fixed;
-    -webkit-background-size: cover;
-    border: 1px solid #000;
-    height: 100vh;
-    overflow-x: hidden;
-    overflow-y: auto;
-    perspective: 1px;
-    height: 200px;
-    width: 0px;
-    background-color: grey;
-    text-align: center;
-    color: black;
-}
-
-
-
-
 
 aside{
     padding: 10px;
@@ -205,4 +185,5 @@ footer{
     background-color: rgb(51, 51, 51);
     margin: 0px;
     width: 100%;
+    color: white;
 }
