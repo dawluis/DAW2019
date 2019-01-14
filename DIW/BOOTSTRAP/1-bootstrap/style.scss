@@ -11,7 +11,7 @@ div{
     height: 50px;
 }
 .seg{
-    height: 150px;
+    height: 250px;
 }
 .ter div{
     height: 100px;
@@ -79,18 +79,18 @@ div{
         }
         :first-child{
             display: flex;
-            align-items: initial;
+            align-items: flex-start;
             justify-content: center;
         }
         :nth-child(2){
             display: flex;
-            align-items: initial;
+            align-items: flex-start;
             justify-content: center;
         }
         :nth-child(3){
             background-color: rgb(146, 50, 50);
             display: flex;
-            align-items: initial;
+            align-items: flex-start;
             justify-content: center;
             height: 500px;
            

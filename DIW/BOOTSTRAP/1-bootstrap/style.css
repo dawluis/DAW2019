@@ -8,7 +8,7 @@ div {
 }
 
 .seg {
-  height: 150px;
+  height: 250px;
 }
 
 .ter div {
@@ -158,9 +158,9 @@ div {
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
-    -webkit-box-align: initial;
-        -ms-flex-align: initial;
-            align-items: initial;
+    -webkit-box-align: start;
+        -ms-flex-align: start;
+            align-items: flex-start;
     -webkit-box-pack: center;
         -ms-flex-pack: center;
             justify-content: center;
@@ -169,9 +169,9 @@ div {
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
-    -webkit-box-align: initial;
-        -ms-flex-align: initial;
-            align-items: initial;
+    -webkit-box-align: start;
+        -ms-flex-align: start;
+            align-items: flex-start;
     -webkit-box-pack: center;
         -ms-flex-pack: center;
             justify-content: center;
@@ -181,9 +181,9 @@ div {
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
-    -webkit-box-align: initial;
-        -ms-flex-align: initial;
-            align-items: initial;
+    -webkit-box-align: start;
+        -ms-flex-align: start;
+            align-items: flex-start;
     -webkit-box-pack: center;
         -ms-flex-pack: center;
             justify-content: center;
