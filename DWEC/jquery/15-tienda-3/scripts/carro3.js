@@ -56,6 +56,7 @@ $(function(){
             $('#cprice').attr("value",sumaPrecio+" €");
             //Copia
            copia(x);
+           $("#cart_items").css('width', '+=120');
         }
     });
     //funcion Copia
@@ -104,6 +105,9 @@ $(function(){
             copia.fadeOut(100,function(){
             copia.remove();
             });
+            if($("#cart_items").children().length > 4){
+                $("#cart_items").css('width', '-=120');
+            }
 
 
         });
@@ -123,34 +127,36 @@ $(function(){
 
     $('#btn_prev').on('click',function(){
         var numArticulos= $("#cart_items").children().length;
-        var ancho= parseInt(numArticulos)*120;
-        var posActual=$("#cart_items").offset();
-        var posActualLeft=posActual.left;
-        if(posActualLeft >= 40){
+        if(numArticulos>4){
+            var ancho= parseInt(numArticulos)*120;
+            var posActual=$("#cart_items").offset();
+            var posActualLeft=posActual.left;
+            if(posActualLeft >= posicionInicialLeft){
+               
 
-        }else{
+            }else{
             $("#cart_items").css('left','+=50');
+            }
         }
-        
-        
-        
     });
     $('#btn_next').on('click',function(){
         var numArticulos= $("#cart_items").children().length;
-        var ancho= parseInt(numArticulos)*120;
-        
-        $("#cart_items").css('width', ancho+"px");
-        var numArticulos=$("#cart_items").children().length;
-        var posActual=$("#cart_items").offset();
-        var posActualLeft=posActual.left;
-        var anchoActual=$("#cart_items").css('width');
-        var sumaActual= parseInt(posActual)+parseInt(anchoActual);
-        var sumaInicial= parseInt(posicionInicialLeft)+parseInt(anchoInicialCarrito);
-        var anchoInt=parseInt(anchoActual);
-        if(posActualLeft <= anchoInt){
-            $("#cart_items").css('left','-=50');
-        }else{
-        
+        if(numArticulos>4){
+            var posActual=$("#cart_items").offset();
+            var posActualLeft=posActual.left;
+            console.log("posActualLeft"+posActualLeft);
+            var anchoActual=$("#cart_items").css('width');
+            console.log("anchoActual"+parseInt(anchoActual));
+            var sumaActual= parseInt(posActualLeft)+parseInt(anchoActual);
+            var sumaInicial= parseInt(posicionInicialLeft)+parseInt(anchoInicialCarrito);
+            var anchoInt=parseInt(anchoActual);
+            console.log("suma actual "+sumaActual);
+            console.log("suma inicial"+sumaInicial);
+            if(sumaActual <= sumaInicial){
+                
+            }else{
+                $("#cart_items").css('left','-=50');
+            }
         }
     });
     
