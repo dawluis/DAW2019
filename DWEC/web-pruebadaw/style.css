@@ -139,11 +139,15 @@ article:hover{
 }
 
 article p a{
-    background: #2196f3;
+    background: #1b88c3;
     text-decoration: none;
-    padding: 10px;
+    padding: 2%;
     color: white;
     border-radius: 3px;
+    float: right;
+    margin: 2%;
+    width: 150px;
+    text-align: center;
 }
 article img{
     max-width: 100px;
