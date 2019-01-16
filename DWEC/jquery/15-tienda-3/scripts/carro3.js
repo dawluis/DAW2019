@@ -152,7 +152,7 @@ $(function(){
             var anchoInt=parseInt(anchoActual);
             console.log("suma actual "+sumaActual);
             console.log("suma inicial"+sumaInicial);
-            if(sumaActual <= sumaInicial){
+            if(sumaActual < sumaInicial){
                 
             }else{
                 $("#cart_items").css('left','-=50');
