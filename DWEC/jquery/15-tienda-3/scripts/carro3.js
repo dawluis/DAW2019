@@ -6,7 +6,6 @@ $(function(){
     var anchoInicialCarrito=$("#cart_items").css('width');
     var pos=$("#cart_items").offset();
     var posicionInicialLeft=pos.left;
-   
 
     $('.item').on('click',function(e){
          /*****************STOCK**************************************** */
@@ -105,9 +104,9 @@ $(function(){
             copia.fadeOut(100,function(){
             copia.remove();
             });
-            if($("#cart_items").children().length > 4){
+            /*if($("#cart_items").children().length > 4){
                 $("#cart_items").css('width', '-=120');
-            }
+            }*/
 
 
         });
@@ -122,16 +121,22 @@ $(function(){
         $('.item').children("label:contains('Stock')").text("Stock 10");
         $('.item').children("label:contains('Stock')").removeClass("agotado");
         iStock=10;
+        var posActual=$("#cart_items").offset();
+            var posActualLeft=posActual.left;
+        $('#cart_items').css('width',anchoInicialCarrito);
+        $('#cart_items').css('left','0');
+        
+       
     });
  
 
     $('#btn_prev').on('click',function(){
         var numArticulos= $("#cart_items").children().length;
-        if(numArticulos>4){
+        if(numArticulos>1){
             var ancho= parseInt(numArticulos)*120;
             var posActual=$("#cart_items").offset();
             var posActualLeft=posActual.left;
-            if(posActualLeft >= posicionInicialLeft){
+            if(posActualLeft > posicionInicialLeft){
                
 
             }else{
@@ -141,7 +146,7 @@ $(function(){
     });
     $('#btn_next').on('click',function(){
         var numArticulos= $("#cart_items").children().length;
-        if(numArticulos>4){
+        if(numArticulos > 4){
             var posActual=$("#cart_items").offset();
             var posActualLeft=posActual.left;
             console.log("posActualLeft"+posActualLeft);
