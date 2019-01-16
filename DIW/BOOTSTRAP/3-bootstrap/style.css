@@ -1,0 +1,12 @@
+navbar {
+  position: fixed;
+  top: 0px;
+}
+
+nav {
+  color: white !important;
+}
+
+.fino {
+  background-color: #e9ecef;
+}

@@ -1,0 +1,254 @@
+ <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="bootstrap/css/bootstrap.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/open-iconic/1.1.1/font/css/open-iconic-bootstrap.min.css" integrity="sha256-BJ/G+e+y7bQdrYkS2RBTyNfBHpA9IuGaPmf9htub5MQ=" crossorigin="anonymous"/>  
+    <link rel="stylesheet" href="style.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+        <script src="bootstrap/js/bootstrap.bundle.js" ></script>
+    </head>
+    <title>Documento</title>
+</head>
+<body>
+    
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+                <a class="navbar-brand" href="#">DIW COURSE</a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                  <span class="navbar-toggler-icon"></span>
+                </button>
+              
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                  <ul class="navbar-nav mr-auto">
+                    <li class="nav-item active">
+                      <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link" href="#">About</a>
+                    </li>
+
+                    <li class="nav-item">
+                      <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled link</a>
+                    </li>
+                  </ul>
+                  <form class="form-inline my-2 my-lg-0">
+                    <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+                    <button class="btn btn-outline-primary my-2 my-sm-0" type="submit">Search</button>
+                  </form>
+                </div>
+        </nav>
+        <br><br><br>
+        <div class="container">
+        <h2>Using Components</h2>
+        <hr class="my-4">
+        <h3>Buttons</h3>
+        <h3>By prupose</h3>
+        <h4>Inside a DIV btn-group</h4>
+        <div class="btn-group">
+            <button type="button" class="btn btn-primary">Primary</button>
+            <button type="button" class="btn btn-secondary">Secondary</button>
+            <button type="button" class="btn btn-success">Success</button>
+            <button type="button" class="btn btn-danger">Danger</button>
+            <button type="button" class="btn btn-warning">Warning</button>
+            <button type="button" class="btn btn-info">Info</button>
+            <button type="button" class="btn btn-light">Light</button>
+            <button type="button" class="btn btn-dark">Dark</button>
+            <button type="button" class="btn btn-link">Link</button>
+       </div>
+        <br>
+        <h4>Whitout btn-group</h4>
+        <button type="button" class="btn btn-primary">Primary</button>
+        <button type="button" class="btn btn-secondary">Secondary</button>
+        <button type="button" class="btn btn-success">Success</button>
+        <button type="button" class="btn btn-danger">Danger</button>
+        <button type="button" class="btn btn-warning">Warning</button>
+        <button type="button" class="btn btn-info">Info</button>
+        <button type="button" class="btn btn-light">Light</button>
+        <button type="button" class="btn btn-dark">Dark</button>
+        <button type="button" class="btn btn-link">Link</button>
+        <br>
+        <h4>By size</h4>
+        <button type="button" class="btn btn-primary btn-lg">Large button</button>
+        <button type="button" class="btn btn-warning btn-sm">Whitout size</button>
+        <button type="button" class="btn btn-danger btn-sm">Small button</button>
+        <br><br>
+        <h4>Adding icons</h4>
+        <button type="button" class="btn btn-default"><span class="oi oi-align-left"></span></button>
+        <button type="button" class="btn btn-default"><span class="oi oi-star">Star</span></button>
+        <button type="button" class="btn btn-default"><span class="oi oi-align-center"></span></button>
+        <button type="button" class="btn btn-default"><span class="oi oi-phone">Call:3423424</span></button>
+        <button type="button" class="btn btn-default"><span class="oi oi-person">Contact</span></button>
+        <button type="button" class="btn btn-default"><span class="oi oi-power-standby">On/Off</span></button>
+        <hr>
+        <h3>Dropdown Menu</h3>
+        <div class="dropdown">
+          <button class="btn btn-primary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            Dropdown button
+          </button>
+          <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+            <a class="dropdown-item" href="#">Action</a>
+            <a class="dropdown-item" href="#">Another action</a>
+            <a class="dropdown-item" href="#">Something else here</a>
+          </div>
+        </div>
+        <hr>
+        <h3>Forms</h3>
+        <h4>Sing in / Registro</h4>
+        <form>
+          <div class="form-row">
+            <div class="col-md-4 mb-3">
+              <label for="validationDefault01">First name</label>
+              <input type="text" class="form-control" id="validationDefault01" placeholder="First name" value="Mark" required>
+            </div>
+            <div class="col-md-4 mb-3">
+              <label for="validationDefault02">Last name</label>
+              <input type="text" class="form-control" id="validationDefault02" placeholder="Last name" value="Otto" required>
+            </div>
+            <div class="col-md-4 mb-3">
+              <label for="validationDefaultUsername">Username</label>
+              <div class="input-group">
+                <div class="input-group-prepend">
+                  <span class="input-group-text" id="inputGroupPrepend2">@</span>
+                </div>
+                <input type="text" class="form-control" id="validationDefaultUsername" placeholder="Username" aria-describedby="inputGroupPrepend2" required>
+              </div>
+            </div>
+          </div>
+          <div class="form-row">
+            <div class="form-group col-md-6">
+              <label for="inputEmail4">Email</label>
+              <input type="email" class="form-control" id="inputEmail4" placeholder="Email">
+            </div>
+            <div class="form-group col-md-6">
+              <label for="inputPassword4">Password</label>
+              <input type="password" class="form-control" id="inputPassword4" placeholder="Password">
+              <small id="passwordHelpInline" class="text-muted">
+                Must be 8-20 characters long.
+              </small>
+            </div>
+        </div>
+          <div class="form-row">
+            <div class="col-md-6 mb-3">
+              <label for="validationDefault03">City</label>
+              <input type="text" class="form-control" id="validationDefault03" placeholder="City" required>
+            </div>
+            <div class="col-md-3 mb-3">
+              <label for="validationDefault04">State</label>
+              <input type="text" class="form-control" id="validationDefault04" placeholder="State" required>
+            </div>
+            <div class="col-md-3 mb-3">
+              <label for="validationDefault05">Zip</label>
+              <input type="text" class="form-control" id="validationDefault05" placeholder="Zip" required>
+            </div>
+          </div>
+          <div class="row">
+                  Gender
+                  <div class="col-1 custom-control custom-radio custom-control-inline">
+                      <input type="radio" id="customRadioInline1" name="customRadioInline1" class="custom-control-input">
+                      <label class="custom-control-label" for="customRadioInline1">Male</label>
+                    </div>
+                    <div class=" col-1 float-right custom-control custom-radio custom-control-inline">
+                      <input type="radio" id="customRadioInline2" name="customRadioInline1" class="custom-control-input">
+                      <label class="custom-control-label" for="customRadioInline2">Femella</label>
+                      <div class="col-10 form-check">
+                          <input class="form-check-input" type="checkbox" value="" id="invalidCheck2" required>
+                          <label class="form-check-label" for="invalidCheck2">
+                            Agree to terms and conditions
+                          </label>
+                        </div>
+                    </div>
+             
+          </div>
+         
+          <div class="text-center">
+              <button class="btn btn-primary" type="submit">Submit form</button> <button class="btn btn-dark" type="submit">Delete Form</button>
+          </div>
+        </form>
+        <hr>
+        <h3>The tab javascript plugin for list group</h3>
+        <div class="row">
+            <div class="col-3">
+              <div class="nav flex-column nav-pills" id="v-pills-tab" role="tablist" aria-orientation="vertical">
+                <a class="nav-link active" id="v-pills-home-tab" data-toggle="pill" href="#v-pills-home" role="tab" aria-controls="v-pills-home" aria-selected="true">Home</a>
+                <a class="nav-link" id="v-pills-profile-tab" data-toggle="pill" href="#v-pills-profile" role="tab" aria-controls="v-pills-profile" aria-selected="false">Profile</a>
+                <a class="nav-link" id="v-pills-messages-tab" data-toggle="pill" href="#v-pills-messages" role="tab" aria-controls="v-pills-messages" aria-selected="false">Popover.js</a>
+                <a class="nav-link" id="v-pills-settings-tab" data-toggle="pill" href="#v-pills-settings" role="tab" aria-controls="v-pills-settings" aria-selected="false">Settings</a>
+              </div>
+            </div>
+            <div class="col-9 border border-primary">
+              <div class="tab-content" id="v-pills-tabContent">
+                <div class="tab-pane fade show active" id="v-pills-home" role="tabpanel" aria-labelledby="v-pills-home-tab">This is the home tab</div>
+                <div class="tab-pane fade" id="v-pills-profile" role="tabpanel" aria-labelledby="v-pills-profile-tab"><div class="card" style="width: 18rem;">
+                    <div class="card-body col-12">
+                      <h5 class="card-title">Card title</h5>
+                      <h6 class="card-subtitle mb-2 text-muted">Card subtitle</h6>
+                      <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                      <a href="#" class="card-link">Card link</a>
+                      <a href="#" class="card-link">Another link</a>
+                    </div>
+                  </div>
+                </div>
+                <div class="tab-pane fade" id="v-pills-messages" role="tabpanel" aria-labelledby="v-pills-messages-tab"><button type="button" class="btn btn-lg btn-danger" data-toggle="popover" title="Popover title" data-content="And here's some amazing content. It's very engaging. Right?">Click to toggle popover</button></div>
+                <div class="tab-pane fade" id="v-pills-settings" role="tabpanel" aria-labelledby="v-pills-settings-tab"><nav aria-label="Page navigation example">
+                  <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ab adipisci voluptas fuga enim vitae delectus at obcaecati eos, velit eum doloremque rerum consequuntur ullam vel repudiandae, corporis vero blanditiis asperiores?
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Labore optio laboriosam tempore deserunt quos? Illo earum unde quaerat numquam perspiciatis voluptate doloribus dolores. Suscipit non accusantium deleniti sint nemo magni?
+                  </p>  
+                  <ul class="pagination">
+                      <li class="page-item">
+                        <a class="page-link" href="#" aria-label="Previous">
+                          <span aria-hidden="true">&laquo;</span>
+                        </a>
+                      </li>
+                      <li class="page-item active"><a class="page-link" href="#">1</a></li>
+                      <li class="page-item"><a class="page-link" href="#">2</a></li>
+                      <li class="page-item"><a class="page-link" href="#">3</a></li>
+                      <li class="page-item">
+                        <a class="page-link" href="#" aria-label="Next">
+                          <span aria-hidden="true">&raquo;</span>
+                        </a>
+                      </li>
+                    </ul>
+                  </nav></div>
+              </div>
+            </div>
+          </div>
+          <br><br>
+          <h3>The tab javascript plugin for Navs</h3>
+          <nav>
+              <div class="nav nav-tabs" id="nav-tab" role="tablist">
+                <a class="nav-item nav-link active" id="nav-home-tab" data-toggle="tab" href="#nav-home" role="tab" aria-controls="nav-home" aria-selected="true">Home</a>
+                <a class="nav-item nav-link" id="nav-profile-tab" data-toggle="tab" href="#nav-profile" role="tab" aria-controls="nav-profile" aria-selected="false">Sass</a>
+                <a class="nav-item nav-link" id="nav-contact-tab" data-toggle="tab" href="#nav-contact" role="tab" aria-controls="nav-contact" aria-selected="false">Botstrap</a>
+              </div>
+            </nav>
+            <div class="tab-content" id="nav-tabContent">
+              <div class="tab-pane fade show active" id="nav-home" role="tabpanel" aria-labelledby="nav-home-tab">This is the home of nav tabs</div>
+              <div class="tab-pane fade" id="nav-profile" role="tabpanel" aria-labelledby="nav-profile-tab">	Sass is the most mature, stable, and powerful professional grade CSS extension language in the world.</div>
+              <div class="tab-pane fade" id="nav-contact" role="tabpanel" aria-labelledby="nav-contact-tab">Build responsive, mobile-first projects on the web with the world’s most popular front-end component library.</div>
+            </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+          
+        </div>
+        <script>
+        $(function () {
+            $('[data-toggle="popover"]').popover()
+          })
+        </script>
+</body>
+</html>
