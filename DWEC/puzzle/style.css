@@ -17,4 +17,11 @@ table td{
 #buttons{
     border: 1px solid black;
     flex: 1;
+    padding: 10px;
 }
+
+#aleatorio{
+    padding: 10px;
+    width: 100%;
+}
+
