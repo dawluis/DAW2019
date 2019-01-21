@@ -2,9 +2,6 @@ table{
   border-collapse: collapse;
   margin: auto;
 }
-td{
-    height: 100px;
-  }
 
 .container{
     display: flex;
@@ -23,5 +20,9 @@ td{
 #aleatorio,#ayuda{
     padding: 10px;
     width: 100%;
+}
+
+.elije{
+    width: 50%;
 }
 

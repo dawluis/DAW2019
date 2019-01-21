@@ -1,5 +1,6 @@
 $(document).ready(function(){
 /* GÉNERO PUZZLE ORDENADO CON LA IMAGENES ORDENADAS */
+    var imagen="perro";
     var tempo
     var intentos=0;
     var time=0;
@@ -22,19 +23,21 @@ $(document).ready(function(){
     content+='</table>';
     $('#puzzle').append(content);
     //$('#puzzle table td').css('width', '64px').css('height','64px');
-    
+    $('#buttons').prepend("<button id='perro' class='elije'><img src='perro.jfif' width='100px'></button>");
+    $('#buttons').prepend("<button id='labrador' class='elije'><img src='labrador.jfif' width='100px'></button>");
     $('#buttons').append("<br><br><br><h3 style='text-align:center'>INTENTOS</h3><div id='intentos'>0</div>");
-    $('#buttons').append("<br><br><br><div><img src='perro.jfif' width=400px></div>");
+    $('#buttons').append("<br><br><br><div><img id='imagenAyuda' src='perro.jfif' width=100%></div>");
    
     $('#buttons div').css("display", "flex").css('justify-content','center').css("align-items","center");
     /* fin */
     
     $('#aleatorio').bind('click', generaAleatorio);
     $('#ayuda').bind('click', ayudar);
-   
-        
-       
-
+    
+  
+    $('#perro').click({img:"perro"},generaImagen);
+    $('#labrador').click({img:"labrador"},generaImagen);
+    
     /********************GENERA PUZZLE ALEATORIO **************************/
     function generaAleatorio(){
         clearInterval(tempo);
@@ -49,7 +52,7 @@ $(document).ready(function(){
                 casillas[i].innerHTML=" ";
                 imagenQuitada=aleatorios[i];
             }else{
-                casillas[i].innerHTML="<img id='"+aleatorios[i]+"' src='perro/"+aleatorios[i]+".jpg' width=100x>";
+                casillas[i].innerHTML="<img id='"+aleatorios[i]+"' src='"+imagen+"/"+aleatorios[i]+".jpg' width=100x>";
             }
 
         }
@@ -67,14 +70,14 @@ $(document).ready(function(){
     
     /*********************MOVER IMAGEN, COMPROBAR SI ES CORRECTO Y MUCHO MAS*******************/
     function mover(e){
-       
-
+        /*decalramos las variables necesarias*/
         var casillas=document.getElementsByTagName('td');
         var x= e.target;
         var imagenId= x.id;
         var casillaId= x.parentNode.id;
-        $('#'+casillaId).clearQueue();
         
+        /* AQUI ELIMINAMOS LA COLA DE PARPADEO DE LA CASILLA INCORRECTA*/
+        $('#'+casillaId).clearQueue();
         
         /*AVERIGUAR CASILLA VACIA*/
         for(var i=0 ; i< casillas.length; i++){
@@ -82,7 +85,7 @@ $(document).ready(function(){
                 var casillaVaciaId=casillas[i].id;
             }
         }
-        
+        /**PRUEBAS PARA SABER LOS ELEMENTOS PULSADOS */
         console.log("HAS PULSADO EN LA CASILLA : "+casillaId);
         console.log("EL ID DE LA IMAGEN PULSADA ES : "+imagenId);
         console.log("ID DE LA CASILLA VACIA : "+casillaVaciaId);
@@ -93,6 +96,8 @@ $(document).ready(function(){
         var numeroCasillaPulsada=casillaId.replace("c","");
         var casillaOrigen="";
         var casillaDestino="none";
+        
+        /**AQUI LE LIMITAMOS LOS MOVIMIENTOS SOLO A SUS ADYACENTES */
         switch(casillaId){
             case "c1":
             if(casillaVaciaId=="c2" || casillaVaciaId=="c5"){
@@ -197,9 +202,7 @@ $(document).ready(function(){
             }
             break;
             case "c14":
-            if(casillaVaciaId=="c13" || casillaVaciaId=="c10"|| casillaVaciaId=="c15"){
-                casillaDestino=casillaVaciaId;
-            }else{
+            if(casillaVaciaId=="c13" || casillaVaciaId=="c10"|| casillaVaciaId=="c15"){casillaDestino=casillaVaciaId;}else{
 
             }
             break;
@@ -218,26 +221,24 @@ $(document).ready(function(){
             }
             break;
         }
-
+        /**SI LA CASILLADESTINO SIGUE SIENDO NONE ES QUE NO SE HA PODIDO MOVER LA FICHA */
         if(casillaDestino=="none"){
-
-            
-            
+            /**AQUI REALIZAMOS UN PEQUEÑO PARPADEO PARA QUE SE SEPA QUE ESTA MAL LA SELECCIONADA */
             $('#'+casillaId).animate({
                 opacity:"0.1"
-            },500).animate({
+            },10).animate({
                 opacity:"1"
-            },500).css("background","red");
+            },10).css("background","red");
             $('#'+casillaId).css("background","white");
            
         }else{
-            $("#"+casillaDestino).html("<img id='"+imagenId+"' src='perro/"+imagenId+".jpg' width='100px'>");
+            $("#"+casillaDestino).html("<img id='"+imagenId+"' src='"+imagen+"/"+imagenId+".jpg' width='100px'>");
             $("#"+casillaId).html(" ");
             $('img').bind('click' , mover);
+            intentos++;
         }
        // $("#"+casillaVaciaId).html("<img id='"+imagenId+"' src='perro/"+imagenId+".jpg' width='100px'>");
         //$("#"+casillaId).html(" ");
-        intentos++;
         console.log("NUMERO DE INTENTOS "+intentos);
         $('#intentos').html(intentos);
         
@@ -278,14 +279,15 @@ $(document).ready(function(){
    
     /***********************AYUDA**********************/
     function ayudar(){
-       
         console.log($('#buttons img').css('display'));
+       
         if($('#buttons img').css('display') == 'block'){
             $('img').off("contextmenu", ventaja);
         }else{
             $('img').on("contextmenu", ventaja);
         }
         $('#buttons img').slideToggle(2000);
+       
         
     }
 
@@ -318,9 +320,11 @@ $(document).ready(function(){
                 var casillaVaciaId=casillas[i].id;
             }
         }
-        $("#"+casillaVaciaId).html("<img id='"+imagenId+"' src='perro/"+imagenId+".jpg' width='100px'>");
+        $("#"+casillaVaciaId).html("<img id='"+imagenId+"' src='"+imagen+"/"+imagenId+".jpg' width='100px'>");
         $("#"+casillaId).html(" ");
         $('img').bind('click' , mover);
+        intentos++;
+        $('#intentos').html(intentos);
 
     }else{
             console.log("no te quedan comodines");
@@ -371,7 +375,27 @@ $(document).ready(function(){
 
 
     }
-    
+    function generaImagen(img){
+        //alert(img.data.img); PASAR PARAMETROS JQUERY
+        var imag=img.data.img;
+        imagen=imag;
+        alert(imag);
+        contador=0;
+        var content="<table><h1>";
+        for(var i=1; i < 5 ; i++){
+        content +='<tr>';
+        for(var z=1 ;z < 5 ; z++){
+            contador++;
+            content +='<td id=c'+contador+'><img id="'+contador+'" src="'+imag+'/'+contador+'.jpg" width=100px></td>';
+        }
+        content +='</tr>';
+    }
+    content+='</table>';
+    $('#puzzle').html(content);
+
+    $('#imagenAyuda').attr('src', imagen+'.jfif');
+
+    }
 
 
     /*function generaPuzzle(){
