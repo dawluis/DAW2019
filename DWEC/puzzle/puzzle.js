@@ -1,5 +1,7 @@
 $(document).ready(function(){
 /* GÉNERO PUZZLE ORDENADO CON LA IMAGENES ORDENADAS */
+    var boolEmpezado=false;
+    var boolAyuda=false;
     var imagen="perro";
     var tempo
     var intentos=0;
@@ -23,11 +25,13 @@ $(document).ready(function(){
     content+='</table>';
     $('#puzzle').append(content);
     //$('#puzzle table td').css('width', '64px').css('height','64px');
-    $('#buttons').prepend("<button id='perro' class='elije'><img src='perro.jfif' width='100px'></button>");
-    $('#buttons').prepend("<button id='labrador' class='elije'><img src='labrador.jfif' width='100px'></button>");
-    $('#buttons').append("<br><br><br><h3 style='text-align:center'>INTENTOS</h3><div id='intentos'>0</div>");
-    $('#buttons').append("<br><br><br><div><img id='imagenAyuda' src='perro.jfif' width=100%></div>");
-   
+    $('#buttons').prepend("<img id='perro' class='elije' src='perro.jfif' width='100px'>");
+    $('#buttons').prepend("<img id='labrador' class='elije' src='labrador.jfif' width='100px'>");
+    $('#buttons').prepend("<h3 style='text-align:center'>Elige tématica</h3>");
+    $('#buttons').append("<h3 style='text-align:center'>INTENTOS</h3><div id='intentos'>0</div>");
+    $('#buttons').append("<h3 style='text-align:center'>COMODINES</h3><div id='comodines'>0</div><br>");
+    $('#buttons').append("<button id='ayuda'>Ayuda</button>");
+    $('#buttons').append("<br><div><img id='imagenAyuda' src='perro.jfif' width=100% style='display:none'></div>");
     $('#buttons div').css("display", "flex").css('justify-content','center').css("align-items","center");
     /* fin */
     
@@ -40,7 +44,10 @@ $(document).ready(function(){
     
     /********************GENERA PUZZLE ALEATORIO **************************/
     function generaAleatorio(){
+        $('#tiempo').html("00:00:00");
+        boolEmpezado=true;
         clearInterval(tempo);
+        minuts=0;
         intentos=0;
         time=0;
         $('#intentos').html(intentos);
@@ -59,13 +66,20 @@ $(document).ready(function(){
         $('#puzzle table').css('margin', 'auto');
         $('#puzzle table td').css('width', '64px').css('height','64px');
         
-        $('img').bind('click' , mover);
+        $('#puzzle img').bind('click' , mover);
         $('img').on("contextmenu", ventaja);
        
         console.log(vacioRandom)
         console.log("imagen quitada es la imagen: "+imagenQuitada);
         tempo= setInterval(cronometro,1000);
-        $('#comodines').html("1");
+        if($('#imagenAyuda').css('display') == 'none'){
+            $('img').off("contextmenu", ventaja);
+            $('#comodines').html("0");
+        }else{
+            $('img').on("contextmenu", ventaja);
+            $('#comodines').html("1");
+        }
+        
     }
     
     /*********************MOVER IMAGEN, COMPROBAR SI ES CORRECTO Y MUCHO MAS*******************/
@@ -90,6 +104,8 @@ $(document).ready(function(){
         console.log("EL ID DE LA IMAGEN PULSADA ES : "+imagenId);
         console.log("ID DE LA CASILLA VACIA : "+casillaVaciaId);
         console.log("LA IMAGEN QUITADA INCIALMENTE ES LA IMAGEN: "+imagenQuitada);
+        
+       
 
         /*********INSERTAR IMAGEN CLICKADA EN IMAGEN VACIA Y VACIAR LA CLIKADA********/
         var numeroCasillaVacia=casillaVaciaId.replace("c","");
@@ -234,7 +250,7 @@ $(document).ready(function(){
         }else{
             $("#"+casillaDestino).html("<img id='"+imagenId+"' src='"+imagen+"/"+imagenId+".jpg' width='100px'>");
             $("#"+casillaId).html(" ");
-            $('img').bind('click' , mover);
+            $('#puzzle img').bind('click' , mover);
             intentos++;
         }
        // $("#"+casillaVaciaId).html("<img id='"+imagenId+"' src='perro/"+imagenId+".jpg' width='100px'>");
@@ -279,14 +295,22 @@ $(document).ready(function(){
    
     /***********************AYUDA**********************/
     function ayudar(){
-        console.log($('#buttons img').css('display'));
-       
-        if($('#buttons img').css('display') == 'block'){
-            $('img').off("contextmenu", ventaja);
-        }else{
-            $('img').on("contextmenu", ventaja);
+        if(boolEmpezado==true){
+            console.log($('#imagenAyuda').css('display'));
+            if($('#imagenAyuda').css('display') == 'none'){
+                if(boolAyuda==false){
+                    $('img').on("contextmenu", ventaja);
+                    $('#comodines').html("1");
+                    boolAyuda=true;
+                }
+             
+            }else{
+                $('#comodines').html("0");
+                $('img').off("contextmenu", ventaja);
+            }
         }
-        $('#buttons img').slideToggle(2000);
+        $('#buttons #imagenAyuda').clearQueue();
+        $('#buttons #imagenAyuda').slideToggle(500);
        
         
     }
@@ -322,7 +346,7 @@ $(document).ready(function(){
         }
         $("#"+casillaVaciaId).html("<img id='"+imagenId+"' src='"+imagen+"/"+imagenId+".jpg' width='100px'>");
         $("#"+casillaId).html(" ");
-        $('img').bind('click' , mover);
+        $('#puzzle img').bind('click' , mover);
         intentos++;
         $('#intentos').html(intentos);
 
@@ -376,10 +400,12 @@ $(document).ready(function(){
 
     }
     function generaImagen(img){
-        //alert(img.data.img); PASAR PARAMETROS JQUERY
+        boolAyuda=false;
+        clearInterval(tempo);
+        $('#intentos').html("0");
+        $('#tiempo').html("00:00:00");
         var imag=img.data.img;
         imagen=imag;
-        alert(imag);
         contador=0;
         var content="<table><h1>";
         for(var i=1; i < 5 ; i++){

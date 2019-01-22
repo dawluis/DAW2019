@@ -1,3 +1,6 @@
+*{
+    box-sizing: border-box;
+}
 table{
   border-collapse: collapse;
   margin: auto;
@@ -5,17 +8,20 @@ table{
 
 .container{
     display: flex;
+    flex-wrap: wrap;
 }
 #puzzle{
     display: flex;
     border: 1px solid black;
-    flex: 1;
+    flex-wrap: wrap;
+    flex: 9;
 }
 #buttons{
     border: 1px solid black;
-    flex: 1;
-    padding: 10px;
+    flex: 2;
+    padding: 30px;
 }
+
 
 #aleatorio,#ayuda{
     padding: 10px;
@@ -23,6 +29,13 @@ table{
 }
 
 .elije{
+    border: 2px solid white;
     width: 50%;
+    cursor: pointer;
 }
+@media screen and (max-width:768px){
+    #puzzle,#buttons{
+        width: 100%;
+    }
 
+}
