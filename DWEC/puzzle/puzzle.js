@@ -25,8 +25,10 @@ $(document).ready(function(){
     content+='</table>';
     $('#puzzle').append(content);
     //$('#puzzle table td').css('width', '64px').css('height','64px');
-    $('#buttons').prepend("<img id='perro' class='elije' src='perro.jfif' width='100px'>");
+    $('#buttons').prepend("<img id='husky' class='elije' src='husky.jfif' width='100px'>");
+    $('#buttons').prepend("<img id='setter' class='elije' src='setter.jfif' width='100px'>");
     $('#buttons').prepend("<img id='labrador' class='elije' src='labrador.jfif' width='100px'>");
+    $('#buttons').prepend("<img id='perro' class='elije' src='perro.jfif' width='100px'>");
     $('#buttons').prepend("<h3 style='text-align:center'>Elige tématica</h3>");
     $('#buttons').append("<h3 style='text-align:center'>INTENTOS</h3><div id='intentos'>0</div>");
     $('#buttons').append("<h3 style='text-align:center'>COMODINES</h3><div id='comodines'>0</div><br>");
@@ -41,6 +43,8 @@ $(document).ready(function(){
   
     $('#perro').click({img:"perro"},generaImagen);
     $('#labrador').click({img:"labrador"},generaImagen);
+    $('#husky').click({img:"husky"},generaImagen);
+    $('#setter').click({img:"setter"},generaImagen);
     
     /********************GENERA PUZZLE ALEATORIO **************************/
     function generaAleatorio(){
@@ -282,11 +286,18 @@ $(document).ready(function(){
 
         console.log("coincide "+cont+" veces ");
         /*********COMPROBAMOS SI LAS COINZIDENCIAS SON CORRECTAS************** */
+        /**SI ESTA TODO BIEN */
         if(cont==15 && bool==true){
-            alert("correcto");
+            var tiempoFinal=$('#tiempo').html();
+            alert("el puzle lo has hecho en "+tiempoFinal+"  y en "+intentos+" intentos");
             clearInterval(tempo);
             $('img').unbind('click' , mover);
             $('img').off("contextmenu", ventaja);
+            $('#banner').toggle();
+            $('#banner').html("<button id='cierraBanner'>x</button><h1>¡ENORABUENA HAS GANADO! </h1> <p>HAS REALIZADO EL PUZZLE EN "+tiempoFinal+"  Y EN "+intentos+" INTENTOS</p>")
+            $('#cierraBanner').click(function () {  
+            $('#banner').remove();
+            });
         }else{
             $('img').on("contextmenu", ventaja);
         }
@@ -329,7 +340,7 @@ $(document).ready(function(){
     }
 
     function ventaja(e){
-    if($('#comodines').html() == "1"){
+    //if($('#comodines').html() == "1"){
         $('#comodines').html("0");
         var casillas=document.getElementsByTagName('td');
         console.log("VENTAJA APLICAAAAAAAA");
@@ -350,11 +361,11 @@ $(document).ready(function(){
         intentos++;
         $('#intentos').html(intentos);
 
-    }else{
+   // }else{
             console.log("no te quedan comodines");
-            $('#comodines').html("<span style:'color:red'>NO TE QUEDAN COMODINES</span>");
+           // $('#comodines').html("<span style:'color:red;'>NO TE QUEDAN COMODINES</span>");
 
-    }
+   // }
         
 
     }
