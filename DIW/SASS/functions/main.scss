@@ -31,3 +31,9 @@ $step: 360deg / $total; //Used to compute the hue based on color-wheel
         margin-left: if($i % 2 == 0, 0px, 50px);
     }
     }
+
+@for $a from 0 to 11{
+    .margen-#{ancho#{$a}}{
+        margin-top:$a#{px};
+    }
+}

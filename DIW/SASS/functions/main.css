@@ -84,4 +84,48 @@
   width: 300px;
   margin-left: 0px;
 }
+
+.margen-ancho0 {
+  margin-top: 0px;
+}
+
+.margen-ancho1 {
+  margin-top: 1px;
+}
+
+.margen-ancho2 {
+  margin-top: 2px;
+}
+
+.margen-ancho3 {
+  margin-top: 3px;
+}
+
+.margen-ancho4 {
+  margin-top: 4px;
+}
+
+.margen-ancho5 {
+  margin-top: 5px;
+}
+
+.margen-ancho6 {
+  margin-top: 6px;
+}
+
+.margen-ancho7 {
+  margin-top: 7px;
+}
+
+.margen-ancho8 {
+  margin-top: 8px;
+}
+
+.margen-ancho9 {
+  margin-top: 9px;
+}
+
+.margen-ancho10 {
+  margin-top: 10px;
+}
 /*# sourceMappingURL=main.css.map */
