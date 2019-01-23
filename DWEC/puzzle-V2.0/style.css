@@ -1,0 +1,71 @@
+*{
+    box-sizing: border-box;
+}
+table{
+  border-collapse: collapse;
+  margin: auto;
+}
+#banner{
+    display: none;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+    border-radius: 20px;
+    width: 100%;
+    max-width: 650px;
+    height: 250px;
+    background: grey;
+    color: white;
+    position: fixed;
+    left: 25%;
+    top: 50%;
+    border: 1px solid #ccc;
+}
+
+.container{
+    display: flex;
+    flex-wrap: wrap;
+}
+#puzzle{
+    display: flex;
+    border: 1px solid black;
+    flex-wrap: wrap;
+    flex: 9;
+}
+#buttons{
+    border: 1px solid black;
+    flex: 2;
+    padding: 30px;
+}
+
+
+#aleatorio,#ayuda{
+    padding: 10px;
+    width: 100%;
+}
+
+.elije{
+    border: 2px solid white;
+    width: 50%;
+    cursor: pointer;
+}
+@media screen and (max-width:768px){
+    #puzzle,#buttons{
+        width: 100%;
+    }
+    #banner{
+        padding: 10px;
+        border-radius: 20px;
+        width: 100%;
+        max-width: 250px;
+        height: 250px;
+        background: grey;
+        color: white;
+        position: fixed;
+        left: 25%;
+        top: 50%;
+        margin: auto;
+        border: 1px solid #ccc;
+    }
+
+}
