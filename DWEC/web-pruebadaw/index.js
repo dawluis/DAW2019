@@ -2,8 +2,9 @@ $(document).ready(function(){
   /*************************************MENU DESPLEGABLE SUBNIVELES*********************************************/
   $('.princi').hover(function (e) {
     // over
+    $('.secun').slideUp('slow');
     var x= e.target;
-    $(x).children('.secun').slideDown('fast');
+    $(x).children('.secun').stop(true).slideDown('fast');
     
 }, function (e) {
     // out
