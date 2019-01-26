@@ -13,35 +13,47 @@
     <form action="" class="form-container">
         <h3 style="text-align:center">Registro de Usuario</h3>
         <hr>
-        <label for="nombreUsuario">Nombre</label><br>
-        <input type="text" name="nombreUsuario" placeholder="Nombre de Usuario"><br>
+        <label for="nombreUsuario">Nombre*</label><br>
+        <input type="text" name="nombreUsuario" placeholder="Nombre de Usuario" required><br><br>
         
         <label for="edad">Edad</label><br>
-        <input type="text" name="edad" placeholder="edad"><br>
-        <label for="edad">DNI</label><br>
-        <input type="text" name="dni" placeholder="DNI"><input type="text" name="letra" placeholder="letra"><br>
+        <input type="text" name="edad" placeholder="edad"><br><br>
         
-        <label for="Direccion">Direccion</label><br>
-        <input type="password" name="contrasena" placeholder="Contraseña"><br>
+        <label for="edad">DNI</label><br>
+        <input type="text" name="dni" placeholder="DNI"><input type="text" name="letra" placeholder="letra"><br><br>
+        
+        <label for="Direccion">Direccion*</label><br>
+        <input type="text" name="direccion" placeholder="Direccion" required><br><br>
         
         <label for="provincia">Provincia</label><br>
         <select name="provincia"> 
             <option name="provincia" value="Valencia">Valencia</option>
-        </select><br>
+            <option name="provincia" value="Madrid">Madrid</option>
+            <option name="provincia" value="Galicia">Galicia</option>
+        </select><br><br>
 
-
-
-
-
+        <label for="localidad">Localidad</label><br>
+        <select name="localidad" disabled> 
+            <option name="provincia" value="Valencia">Valencia</option>
+            <option name="provincia" value="Madrid">Madrid</option>
+            <option name="provincia" value="Galicia">Galicia</option>
+        </select><br><br>
+        <label for="CodigoPostal">Codigo Postal*</label><br>
+        <input type="text" name="CodigoPostal" placeholder="Codigo Postal" required><br><br>
+        
+        <label for="telefono">Telefono de contacto</label><br>
+        <input type="text" name="telefono" placeholder="Telefono"><br><br>
 
         <label for="Email">Email</label><br>
-        <input type="email" name="email" placeholder="Email"><br>
+        <input type="email" name="email" placeholder="Email"><br><br>
         
-        <label for="Fecha de Nacimiento">Fecha de Nacimiento</label><br>
-        <input type="date" name="fecha"><br><br>
+        <label for="EmailRepe">Repita el Email</label><br>
         
-        
-        <input type="submit"><input type="reset">
+        <input type="email" name="EmailRepe" placeholder="Email"><br><br>
+        (*) Datos obligatorios<br>
+        <input type="submit"><input type="reset"><br>
     </form>
+    <script src="jquery-3.3.1.min.js"></script>
+    <script src="index.js"></script>
 </body>
 </html>
