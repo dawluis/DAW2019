@@ -36,16 +36,44 @@ $(document).ready(function () {
         }
     });
 
+    $('select[name=provincia]').change(function(){
+        var valorSelect=$(this).val();
+        var Valencia= ["Requena","Quart de Poblecito","Alboraia"];
+        var Castellon=["Villareal","Oropesa","Peñiscola"];
+        var Alicante=["Ibi", "Alcoy", "Denia"];
+        $('select[name=localidad]').attr("disabled",false);
+        console.log(Valencia.length);
+        $('select[name=localidad]').html("");
+        if(valorSelect=="Valencia"){
+            for(var i=0 ; i < Valencia.length ; i++){
+                $('select[name=localidad]').append("<option name='provincia' value='"+Valencia[i]+"'>"+Valencia[i]+"</option>");
+            }
+        }
+        if(valorSelect=="Castellon"){
+            for(var i=0 ; i < Castellon.length ; i++){
+                $('select[name=localidad]').append("<option name='provincia' value='"+Castellon[i]+"'>"+Castellon[i]+"</option>");
+            }
+        }
+        if(valorSelect=="Alicante"){
+            for(var i=0 ; i < Alicante.length ; i++){
+                $('select[name=localidad]').append("<option name='provincia' value='"+Alicante[i]+"'>"+Alicante[i]+"</option>");
+            }
+        }
+        
+
+    });
 
     $("form").submit(function(){
        
             var resultado=$('input[name=email]').val().indexOf("@");
             if(resultado == -1){
                 alert("email incorrecto le falta la @");
+                return false;
             }else{
                 alert("email correcto tiene la @");
+
             }
-        return false;
+        
         /**DNI COMPROBACIONES */
         /*if($("input[name=dni]").val()=="" || $("input[name=letra]").val()==""){
             alert("dni vacio");
