@@ -38,5 +38,44 @@ $('section,aside,img').mouseover(function(){
 });
   /*************************************FIN MENU*********************************************/
 
+$('#img-portada').animate({
+  width:'100%',
+  height:'100%'
+},1000,'swing');
+
+$('.ico').animate({
+  width:'100px'
+},500,'linear').animate({
+  width:'60px'
+},500,'swing');
+var alto=document.getElementById("uno").offsetTop;
+console.log(document.getElementById("uno").offsetTop);
+var bol=false;
+$(window).scroll(function () {
+  var scroll = $(window).scrollTop();
+  console.log(scroll);
+  // Do something
+  console.log(alto);
+  //alto=parseInt(alto)-100;
+  if(bol==false){
+    if((scroll+400) > alto){
+      console.log("has llegado al punto");
+      $('#uno').animate({
+          width:'100%'
+      },10);
+      bol=true;
+    }else{
+      
+    }
+   
+
+  }
+  
+});
+
+
+
+
+
 
 });

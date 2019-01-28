@@ -118,8 +118,11 @@ main{
 
 }
 #img-portada{
-    margin-bottom: -7px;
-    width: 100%;
+    width: 0px;
+    height: 10px;
+}
+#uno{
+  width: 50%;
 }
 
 section{
