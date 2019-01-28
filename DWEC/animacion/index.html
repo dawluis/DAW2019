@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+
+    <style>
+    #anima{
+        text-align: center;
+        color: white;
+        width: 0px;
+        left: 0px;
+        top:0px;
+        height: 10px;
+        background-color: royalblue;
+    }
+    </style>
+</head>
+<body>
+    <div id="anima"><h1>PRUEBA DAW</h1></div>
+    <div id="navAnimate">nav</div>
+    <div style="height:10000px"></div>
+
+<script>
+   
+$(document).ready(function(){
+        $('#anima').css("position", "absolute");
+        $('#anima').animate({
+            width: '100%'
+        },2000).animate({
+            height: '80px'
+        },300);
+        $('#anima').css("position", "fixed");
+    
+    });
+
+  /*LOOOP
+    var loop= setInterval(loop,2000);
+    
+    function loop(){
+        $('#anima').animate({
+            left: '10px',
+            width: '200px',
+            top: '100px'
+        },1000).animate({
+            top: '0px',
+            left: '0px',
+            width: '100%'
+        },1000);
+    
+    }
+});*/
+</script>
+    
+
+
+</body>
+</html>

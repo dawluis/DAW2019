@@ -349,6 +349,7 @@ $(document).ready(function(){
             }
         }
     }
+    /**ESTA FUNCION RECIBE EL NOMBRE DE LA IMAGEN Y LA CARGA EN LA TABLA PRINCIPAL */
     function generaImagen(img){
         boolAyuda=false;
         clearInterval(tempo);
