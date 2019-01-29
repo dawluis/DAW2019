@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title>Ejemplo de animación con FadeOut()</title>
+		<style media="screen">
+			/*body { background: #666; }*/
+			span { cursor:pointer; }
+	  		span.hilite { background:yellow; }
+			div { display:inline; color:red; } /*Se pone inline para que al quitarlo se ocupe su hueco */
+		</style>
+	</head>
+	<body>
+		<h3>Encuentra los adjetivos <div></div></h3> 
+		<p> La chaqueta <span>roja</span> es lo mejor cuando hace un tiempo <span>cálido</span> ¿verdad?</p>
+		<p><a href="http://api.jquery.com/hover/">.hover() Documentation</a></p>
+		<p><a href="https://api.jquery.com/fadeOut/">.fadeOut() Documentation</a></p>
+		
+		<script type="text/javascript" src="jquery-3.3.1.js"></script>
+		<script type="text/javascript">
+		$(document).ready(function() {
+			 $('p span').hover(function(){
+				$(this).css("background-color", "red");
+			 },function(){
+				$(this).css("background-color", "inherit");
+			 });
+			 $('p span').click(function(){
+				 $(this).fadeOut();
+				 $('h3 div').html("<h2 style='color:red'>Roja se ha desvanecido</h2>");
+			 });
+			 $('h3 div').click(function(){
+				$('p span').fadeIn();
+			 })
+
+		});
+		</script>
+	</body>
+</html>
+
