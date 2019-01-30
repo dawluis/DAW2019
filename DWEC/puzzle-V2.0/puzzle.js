@@ -1,5 +1,5 @@
 $(document).ready(function(){
-/* GÉNERO PUZZLE ORDENADO CON LA IMAGENES ORDENADAS */
+
     var boolEmpezado=false;
     var boolAyuda=false;
     var imagen="perro";
@@ -12,7 +12,7 @@ $(document).ready(function(){
     var imagenQuitada=0;
     var vacioRandom=0;
     var contador=0;
-    
+    /* GENERO PUZZLE ORDENADO CON LA IMAGENES ORDENADAS */
     var content="<table><h1>";
     for(var i=1; i < 5 ; i++){
         content +='<tr>';
@@ -24,6 +24,8 @@ $(document).ready(function(){
     }
     content+='</table>';
     $('#puzzle').append(content);
+
+    /****************************INSERTAMOS LAS IMAGENES DE LOS TEMAS DEL PUZZLE Y EL ASIDE DE LAS OPCIONES */
     //$('#puzzle table td').css('width', '64px').css('height','64px');
     $('#buttons').prepend("<img id='husky' class='elije' src='husky.jfif' width='100px'>");
     $('#buttons').prepend("<img id='setter' class='elije' src='setter.jfif' width='100px'>");
@@ -37,10 +39,10 @@ $(document).ready(function(){
     $('#buttons div').css("display", "flex").css('justify-content','center').css("align-items","center");
     /* fin */
     
+    
+    //**ASIGNAMOS LOS EVENTOS A LOS ELEMENTOS DEL PUZZLE  */
     $('#aleatorio').bind('click', generaAleatorio);
     $('#ayuda').bind('click', ayudar);
-    
-  
     $('#perro').click({img:"perro"},generaImagen);
     $('#labrador').click({img:"labrador"},generaImagen);
     $('#husky').click({img:"husky"},generaImagen);
@@ -48,16 +50,26 @@ $(document).ready(function(){
     
     /********************GENERA PUZZLE ALEATORIO **************************/
     function generaAleatorio(){
+        /**INICIALIZAMOS EL CONTADOR */
         $('#tiempo').html("00:00:00");
-        boolEmpezado=true;
-        clearInterval(tempo);
+
+        boolEmpezado=true;//ESTA VARIABLE NOS INDICA SI UN JUEGO SE HA INICIADO
+        
+        clearInterval(tempo);//RESETEAMOS EL TIEMPO
+        
         minuts=0;
         intentos=0;
         time=0;
+        /**INSERTAMOS LOS INTENTOS */
         $('#intentos').html(intentos);
+        
+        /**COGEMOS TODAS LAS CASILLAS */
         var casillas= document.getElementsByTagName('td');
+        
+        /**GENERAMOS UN ARRAY DE NUMEROS ALEATORIOS NO REPETIDOS */
         var aleatorios=aleatorio();
-        vacioRandom=Math.floor(Math.random() *16)+1;
+        
+        vacioRandom=Math.floor(Math.random() *16)+1;//VACIAMOS UNA CASILLA ALEATORIAMENTE
         for(var i=0 ; i< casillas.length; i++){
             if(i+1 == vacioRandom){
                 casillas[i].innerHTML=" ";
@@ -110,21 +122,13 @@ $(document).ready(function(){
         /**AQUI LE LIMITAMOS LOS MOVIMIENTOS SOLO A SUS ADYACENTES */
         switch(casillaId){
             case "c1":
-            if(casillaVaciaId=="c2" || casillaVaciaId=="c5"){
-                casillaDestino=casillaVaciaId;
-            }
+            if(casillaVaciaId=="c2" || casillaVaciaId=="c5"){casillaDestino=casillaVaciaId;}
             break;
-            
             case "c2":
-            if(casillaVaciaId=="c1" || casillaVaciaId=="c3" || casillaVaciaId=="c6"){
-                casillaDestino=casillaVaciaId;
-            }
+            if(casillaVaciaId=="c1" || casillaVaciaId=="c3" || casillaVaciaId=="c6"){casillaDestino=casillaVaciaId;}
             break;
-            
             case "c3":
-            if(casillaVaciaId=="c2" || casillaVaciaId=="c4" || casillaVaciaId=="c7"){
-                casillaDestino=casillaVaciaId;
-            }
+            if(casillaVaciaId=="c2" || casillaVaciaId=="c4" || casillaVaciaId=="c7"){casillaDestino=casillaVaciaId;}
             break;
             
             case "c4":
@@ -200,12 +204,24 @@ $(document).ready(function(){
         /**SI LA CASILLADESTINO SIGUE SIENDO NONE ES QUE NO SE HA PODIDO MOVER LA FICHA */
         if(casillaDestino=="none"){
             /**AQUI REALIZAMOS UN PEQUEÑO PARPADEO PARA QUE SE SEPA QUE ESTA MAL LA SELECCIONADA */
+            for(var j=0 ; j < 5 ; j++){
+            $('#'+casillaId+" img").css("border","10px solid red");
             $('#'+casillaId).animate({
-                opacity:"0.1"
+                opacity:"0.1",
+                borderWidth: "20px"
             },10).animate({
                 opacity:"1"
-            },10).css("background","red");
-            $('#'+casillaId).css("background","white");
+            },10);
+            $('#'+casillaId+" img").animate({
+                opacity:"0.1",
+                border: "20px solid red"
+            },10).animate({
+                opacity:"1"
+            },10);
+            $('#'+casillaId+" img").css("border","none");
+
+        }
+        
            
         }else{
             $("#"+casillaDestino).html("<img id='"+imagenId+"' src='"+imagen+"/"+imagenId+".jpg' width='100px'>");
@@ -354,7 +370,7 @@ $(document).ready(function(){
         boolAyuda=false;
         clearInterval(tempo);
         $('#intentos').html("0");
-        $('#tiempo').html("00:00:00");
+        //$('#tiempo').html("00:00:00");
         var imag=img.data.img;
         imagen=imag;
         contador=0;
