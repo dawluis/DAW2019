@@ -204,12 +204,11 @@ $(document).ready(function(){
         /**SI LA CASILLADESTINO SIGUE SIENDO NONE ES QUE NO SE HA PODIDO MOVER LA FICHA */
         if(casillaDestino=="none"){
             /**AQUI REALIZAMOS UN PEQUEÑO PARPADEO PARA QUE SE SEPA QUE ESTA MAL LA SELECCIONADA */
-            var intervalo= setInterval(function(){
-                $('#'+casillaId).toggleClass("animaBorde");
-            },10);
+            $('#'+casillaId).addClass("animaBorde");
             setTimeout(function(){
-                clearInterval(intervalo);
-            },10);
+
+                $('#'+casillaId).removeClass("animaBorde");
+            },500);
             
             $('#'+casillaId).animate({
                 opacity:"0.1"

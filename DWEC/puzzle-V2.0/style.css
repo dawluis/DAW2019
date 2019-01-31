@@ -7,16 +7,28 @@ table{
 }
 
 @keyframes borderAnimation{
-    from{
+    0%{
         outline: 20px solid red;
     }
-    to{
+    20%{
+        outline: 0px solid red;
+        transform: rotate(50deg);
+    }
+    40%{
+        outline: 20px solid red;
+        transform: rotate(100deg);
+    }
+    80%{
+        outline: 40px solid red;
+        transform: rotate(-150deg);
+    }
+    100%{
         outline: 0px solid red;
     }
 }
 
 .animaBorde{
-    -webkit-animation: borderAnimation 200ms linear;
+    -webkit-animation: borderAnimation 500ms linear;
 }
 
 
