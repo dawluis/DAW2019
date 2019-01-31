@@ -5,6 +5,24 @@ table{
   border-collapse: collapse;
   margin: auto;
 }
+
+@keyframes borderAnimation{
+    from{
+        outline: 20px solid red;
+    }
+    to{
+        outline: 0px solid red;
+    }
+}
+
+.animaBorde{
+    -webkit-animation: borderAnimation 200ms linear;
+}
+
+
+
+
+
 #banner{
     display: none;
     justify-content: center;

@@ -204,23 +204,20 @@ $(document).ready(function(){
         /**SI LA CASILLADESTINO SIGUE SIENDO NONE ES QUE NO SE HA PODIDO MOVER LA FICHA */
         if(casillaDestino=="none"){
             /**AQUI REALIZAMOS UN PEQUEÑO PARPADEO PARA QUE SE SEPA QUE ESTA MAL LA SELECCIONADA */
-            for(var j=0 ; j < 5 ; j++){
-            $('#'+casillaId+" img").css("border","10px solid red");
+            var intervalo= setInterval(function(){
+                $('#'+casillaId).toggleClass("animaBorde");
+            },10);
+            setTimeout(function(){
+                clearInterval(intervalo);
+            },10);
+            
             $('#'+casillaId).animate({
-                opacity:"0.1",
-                borderWidth: "20px"
-            },10).animate({
-                opacity:"1"
-            },10);
-            $('#'+casillaId+" img").animate({
-                opacity:"0.1",
-                border: "20px solid red"
-            },10).animate({
-                opacity:"1"
-            },10);
-            $('#'+casillaId+" img").css("border","none");
-
-        }
+                opacity:"0.1"
+            },10).css("outline","20px solid red").animate({
+                opacity:"1",
+                borderTopColor: "#fff"
+            },10).css("outline","0px solid red");
+        
         
            
         }else{

@@ -1,0 +1,25 @@
+body{
+    background-color: rgb(255, 255, 255);
+    color: rgb(0, 0, 0);
+    text-align: center;
+    font-family: helvetica;
+}
+h1{
+    color: blue;
+    
+}
+table{
+    text-align: center;
+    width: 500px;
+}
+
+div{
+    width: 100%;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+}
+#espacio{
+    
+    height: 20px;
+}

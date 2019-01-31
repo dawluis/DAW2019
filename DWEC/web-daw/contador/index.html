@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>PruebaDaw</title>
+    <link rel="stylesheet" href="http://pruebadaw.epizy.com/style.css">
+    <link rel="shortcut icon" href="http://pruebadaw.epizy.com/img/ico.png" type="image/x-icon"/>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <style>
+        #numero{
+    cursor: pointer;
+}
+    </style>
+</head>
+<body>
+   <header>
+       <img src="http://pruebadaw.epizy.com/img/ico.png" alt="" class="ico">
+      <h1>2ºDAW 2019</h1>
+   </header>
+   <nav>
+       <div class="itemenu"><a href="http://pruebadaw.epizy.com/">HOME</a></div>
+       <div class="itemenu"><a href="http://pruebadaw.epizy.com/javascript">JS</a></div>
+       <div class="itemenu"><a href="http://pruebadaw.epizy.com/php/">PHP</a></div>
+       <div class="itemenu"><a href="http://pruebadaw.epizy.com/sobre/index.html">SOBRE MI</a></div>
+   </nav>
+   
+   <main>
+        <section id="principal" style="text-align:center">
+        
+        <span id="numero" style="font-size:4em">0</span>
+        <h3>PULSA EL NUMERO PARA INCREMENTARLO EN 1 CADA CLICK</h3>
+    </section>
+      <aside>
+          <h3>Mas información<nav></nav></h3>
+          <hr>
+          <img class="img-aside" src="img/desarrolloweb.jfif" alt="">
+          <hr>
+          <ul><h4>Items</h4>
+              <li> Item 1 </li>
+              <li> Item 2</li>
+              <li> Item 3</li>
+            </ul>
+           <hr>
+        <ul><h4>RRSS</h4>
+              <li> Google </li>
+              <li> Youtube </li>
+              <li> Twiter </li>
+            </ul>
+        
+      </aside>
+       
+   </main>
+   
+   <footer>
+       <h4>LUIS MARCO WEB ©</h4>
+   </footer>
+   <script>
+       
+$('#numero').click(function(e){
+    var number=parseInt($('#numero').text());
+    $('#numero').text(++number);
+});
+   </script>
+</body>
+</html>
