@@ -6,10 +6,13 @@
 	<meta http-equiv="X-UA-Compatible" content="ie=edge">
 	<title>Document delay()</title>
 	<style>
-		div.primero {background-color:#aac;display:none; }
+		p{margin: 1px}
+		div.primero {background-color:#aac;  margin-right: 100%; }
 		div.segundo {background-color:#abc;	display:none;}
 		div.tercero {background-color:#abc;display:none;}
 		div.cuarto {background-color:#abc;	display:none;}
+		div.quinto {background-color:#abc;	width: 20%; transition: all 100ms linear;}
+		div.sexto {background-color:#abc; width: 20%; height: 20px; overflow: hidden;}
 </style>
 </head>
 
@@ -27,11 +30,50 @@
 	<div class="cuarto">
 		<p> Fourth </p>
 	</div>
+	<div class="quinto">
+		<p> Quinto </p>
+	</div>
+	<div class="sexto">
+		 Sexto
+		<p>Lorem quam totam. Commodi voluptatum iusto molestias itaque et labore magnam placeat adipisci. Pariatur quo numquam atque, eius doloribus delectus suscipit ad optio aliquid alias? lorem</quo></p>
+	</div>
 
 	<script type="text/javascript" src="jquery-3.3.1.js"></script>
 	<script type="text/javascript">
 		$(document).ready(function () {
 			//type here your code
+			$('.primero').animate({
+				marginRight:'0px'
+			},1000);
+			
+			
+			$('.segundo').delay(500);
+			$('.segundo').fadeIn();
+			$('.tercero').delay(1000);
+			$('.tercero').fadeIn();
+			$('.cuarto').delay(1500);
+			$('.cuarto').fadeIn();
+			
+			$('.quinto').hover(function(){
+				$(this).width("50%");
+			},function(){
+				$(this).width("20%");
+			});
+			$('.sexto').hover(function(){
+				$(this).stop(true).animate({
+					width: '50%'
+				},200).animate({
+					height:'100px'
+				},200);
+			},function(){
+				$(this).animate({
+					width: '20%'
+				},200).animate({
+					height:'20px'
+					
+				});
+			});
+
 		});
 	</script>
 </body>
