@@ -12,15 +12,14 @@ table{
     }
     20%{
         outline: 0px solid red;
-        transform: rotate(50deg);
+        transform: rotate(1500deg);
     }
     40%{
         outline: 20px solid red;
         transform: rotate(100deg);
     }
     80%{
-        outline: 40px solid red;
-        transform: rotate(-150deg);
+        transform: rotate(-1550deg);
     }
     100%{
         outline: 0px solid red;

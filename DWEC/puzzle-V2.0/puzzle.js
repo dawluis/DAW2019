@@ -305,7 +305,7 @@ $(document).ready(function(){
     }
 
     function ventaja(e){
-        if($('#comodines').html() == "1"){
+        //if($('#comodines').html() == "1"){
             $('#comodines').html("0");
             var casillas=document.getElementsByTagName('td');
             console.log("VENTAJA APLICAAAAAAAA");
@@ -325,7 +325,7 @@ $(document).ready(function(){
             $('#intentos').html(intentos);
 
         }
-    }
+    //}
     function cronometro(){
         time++;
         if(time >= 10){
