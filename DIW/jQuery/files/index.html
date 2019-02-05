@@ -11,6 +11,31 @@
 
 	<style>
 	#blog p.excerpt { display: none; }
+	.under li, #nav > li{
+		display: inline-block;
+		list-style: none;
+		padding: 10px;
+		background: rgb(255, 238, 0);
+		margin: 0px;
+		border: 1px solid black;
+		position: relative;
+	}
+	#nav li ul{
+		position: absolute;
+		top: 10px;
+		display: block;
+		background: rgb(255, 238, 0);
+		width: 100%;
+		list-style: none;
+	}
+
+	.module{
+		border: 1px solid black;
+		
+	}
+	.current{
+		border: 1px solid black;
+	}
 	</style>
 
 </head>
@@ -150,7 +175,7 @@
 
 	</div>
 
-	<script src="libs/jquery-3.3.1.js"></script>
+	<script src="../1-Ejercicios/jquery-3.3.1.js"></script>
 	
 	<!--<script src="js/sandbox.js"></script>
 	<script src="js/hoverClass.js"></script>
@@ -191,9 +216,9 @@
 		//¿funciona? ¿por qué hace un submit? vuelve atrás con el navegador al no encontrar la página y verifica si borró o no el select
 		var $espe = $("#specials select");
 		$("input[value=Go]").eq(1).click(function (e) {
-			e.preventDefault();)
+			e.preventDefault();
 			$espe.remove();
-		})
+		});
 
 		//Seleccionar el primer ítem de la lista en el elemento #slideshow; 
 		//añadirle la clase current al mismo y luego añadir la clase disabled a los elementos hermanos.
@@ -242,6 +267,46 @@
 				$myInput.addClass("hint");
 			};	
 		})
+
+		//5.7.2 Añade navegacion de tabs
+		$('div.module').hide();
+		$('.module').eq(0).before("<ul class='under'></ul>");
+		$('.module').each(function( index ){
+			var h2= $('.module h2').eq(index).text();
+			$('.under').append('<li>'+h2+'</li>');
+			$('.under li').css("cursor", "pointer");
+			$('.under li').eq(index).bind('click',function(){
+				$('.module').hide();
+				$('.module').removeClass('current');
+				$('.module').eq(index).addClass('current');
+				$('.module').eq(index).toggle();
+			});
+			//$('.module').eq(0).show();
+		});
+
+		//6.5.1. Reveal hidden text
+		
+		$('#blog h3 a').bind('click',function(e){
+			e.preventDefault();
+			$('#blog p').stop(true).slideUp();
+			$(this).parent().siblings('p').stop(true).slideToggle();
+		});
+
+
+
+		//6.5.2. Create a dropdown menu
+		$('#nav li ul').hide();
+		$('#nav li').hover(function(){
+
+			if($(this).length){
+				$(this).children('ul').stop(true).slideDown();
+			}
+
+		},function(){
+			$(this).children('ul').stop(true).slideUp();
+		})
+
+
 		
 	</script>
 </body>
