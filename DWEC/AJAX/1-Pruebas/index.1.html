@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>PruebaDaw</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="shortcut icon" href="img/ico.png" type="image/x-icon"/>
+    <script src="jquery-3.3.1.min.js"></script>
+    <script src="index.js"></script>
+    <style>
+    #contenido{
+      width: 100%;
+      display: flex;
+    }
+    div{
+            text-align: center;
+            
+        }
+    div p{
+        text-align: left;
+        
+    }
+    @media screen and (min-width:600px){
+        img{
+            width: 500px;
+            margin: auto;
+        }
+    }
+    </style>
+</head>
+<body>
+   <header>
+       <a href="index.html"><img src="img/ico.png" alt="inicio"  class="ico"></a>
+      <h1>2ºDAW 2019</h1>
+   </header>
+     <nav>
+    <ul class="princi">
+        <li>Javascript
+            <ul class="secun">
+                <li><a href="maquina/MaquinaRefrescos.html">Maquina</a></li>
+                <li><a href="calculadora/calculadora.html">Calculadora</a></li>
+                <li><a href="eventos/eventos.html">Eventos</a></li>
+                <li><a href="switch/plantilla.html">Switch</a></li>
+                <li>Eventos-2
+                    <ul class="terc">
+                        <li><a href="eventos2/raton.html">Raton</a></li>
+                        <li><a href="eventos2/teclado.html">Teclado</a></li>
+                        <li><a href="eventos2/tecladoRaton.html">tecladoRaton</a></li>
+                        <li><a href="eventos2/zonas.html">Zonas</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </li>
+    </ul>
+    <ul class="princi">
+        <li>jQuery
+            <ul class="secun">
+                    <li>1ºEvaluacion
+                        <ul class="terc">
+                            <li><a href="form-jquery/plantilla.html">Form</a></li>
+                            <li><a href="remove/plantilla.html">Banner</a></li>
+                            <li><a href="replace/plantilla.html">Replace</a></li>
+                            <li><a href="class/plantilla.html">addClass</a></li>
+                        </ul>
+                    </li>
+                    <li>2ºEvaluacion
+                        <ul class="terc">
+                            <li><a href="target/plantilla.html">Target</a></li>
+                            <li><a href="atributo/plantilla.html">Atributos</a></li>
+                            <li><a href="zoom/plantilla.html">Zoom</a></li>
+                            <li><a href="formulario/index.html">Formulario-2</a></li>
+                            <li><a href="contador/index.html">Contador</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="tienda/carro.html">Tienda</a></li>
+                    <li><a href="puzzle/index.html">Puzzle</a></li>
+                </ul>
+     </li>
+ </ul>
+ <ul class="princi">
+     <li>CSS
+         <ul class="secun">
+             <li><a href="">item1</a></li>
+             <li><a href="">item2</a></li>
+             <li><a href="">item3</a></li>
+         </ul>
+     </li>
+ </ul>
+</nav>
+   <main>
+      <section id="principal">
+         <button id="snowboard">SnowBoard</button>
+         <button id="leche">Leche</button>
+         <button id="joyeria">Joyeria</button>
+          <div id="contenido">
+
+          </div>
+
+
+
+
+
+
+      </section>
+      <aside>
+      <form action="">
+        <h4 style="text-align:center">Comprobar DNI</h4>
+        <input type="text" name="dni" placeholder="123456789">
+        <input type="submit" value="Comprobar" >
+
+      </form>
+      </aside>
+       
+   </main>
+   
+   <footer>
+       <h4>LUIS MARCO WEB ©</h4>
+   </footer>
+    <script src="jquery-3.3.1.min.js"></script>
+    <script src="index.js"></script>
+    <script>
+        $(function(){
+            $("button").click(function(e){
+              id= e.target.id;
+              $("#contenido").load("choto.html #"+id+"1");
+            });
+
+
+            $('form').submit(function(){
+              var usuario={
+                dni: $("input[name=dni]").val()
+              }
+
+              $.get("usuario.php", usuario , function (datos) {
+                alert(datos.nombre); })
+                .fail(function(jqXHR, textStatus, errorThrow){
+                  alert(" TEMPORALMENTE DESABILITADO "+ errorThrow);
+
+                });
+                //alert($("input[name=dni]").val());
+                return false;
+
+            });
+
+
+
+
+
+
+
+
+        });
+    </script>
+</body>
+</html>

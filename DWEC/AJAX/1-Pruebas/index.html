@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="jquery-3.3.1.min.js" ></script>
+    <title>Document</title>
+</head>
+<body>
+    <a class="cho" href="#">choto</a>
+    <a class="choti" href="#">choti</a>
+    <a class="chota" href="#">chota</a>
+    <div id="tal">
+
+    </div>
+
+
+    <script>
+        $(function(){
+            var link= "choto.html";
+                $("#tal").load(link +  " #choto");
+
+            $("a.cho").click(function(){
+                var link= "choto.html";
+                $("#tal").load(link +  " #choto");
+                return false;
+            });
+            $("a.choti").click(function(){
+                var link= "choto.html";
+                $("#tal").load(link + " #choti");
+                return false;
+            });
+            $("a.chota").click(function(){
+                var link= "choto.html";
+                $("#tal").load(link + " #chota");
+                return false;
+            });
+            var datos={
+                nombre: "Bruno",//$("#nombre").val();
+                edad: "20",//$("#edad").val();
+                dni: "1213123"//$("#dni").val();
+            }
+
+            /*$.get("login.php", datos , devuelveDatos);*/
+
+        });
+
+
+
+
+
+        
+
+
+        </script>
+</body>
+</html>
