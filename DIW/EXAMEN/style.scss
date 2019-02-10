@@ -1,0 +1,59 @@
+$color: red;
+
+@mixin tamanoCuadrado($tamano) {
+    width: $tamano;
+    height:$tamano;
+}
+
+
+
+*{
+    box-sizing: border-box;
+}
+$colores:(green,blue,black);
+
+@each $item in $colores{
+    .#{$item} {
+        background-color:$item;
+    }
+}
+ 
+$total:10;
+
+@for $i from 1 through $total{
+    .choto:nth-child(#{$i}) {
+        width: $i+10px;
+        color:red;    
+    }
+
+
+}
+#menu{
+    @media all and(max-width:768px){
+        order: 3;
+    }
+}
+
+.flexer{
+    width: 100%;
+    display: flex;
+    background: aqua;
+    justify-content: space-evenly;
+    align-items: center;
+    flex-wrap: wrap;
+    @media all and(max-width:568px){
+        flex-direction: column;
+    }
+}
+
+.itemo{
+    margin: 5px;
+    @include tamanoCuadrado(150px);
+    flex:0 0 150px;
+    background: brown;
+    border: 2px solid black;
+    @media all and(max-width:400px){
+        display: block;
+        width: 100%;
+    }
+}
