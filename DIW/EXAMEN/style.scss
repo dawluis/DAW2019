@@ -1,64 +1,49 @@
-@import 'helper/mixins';
-@import 'helper/placeholder';
-@import 'helper/variables';
-$color: red;
+$list:(red,yellow,purple);
 
-@mixin tamanoCuadrado($tamano) {
-    width: $tamano;
-    height:$tamano;
+@mixin flag($color){
+    background-color: $color;
+    height: 200px;
 }
 
-%centrado{
-    text-align: center; 
-}
-
-*{
-    box-sizing: border-box;
-}
-$colores:(green,blue,black);
-
-@each $item in $colores{
+@each $item in $list{
     .#{$item} {
-        background-color:$item;
-    }
+        background: $item;
+        }
 }
- 
-$total:10;
-
-@for $i from 1 through $total{
-    .choto:nth-child(#{$i}) {
-        width: $i+10px;
-        color:red;    
-    }
-
-
-}
-#menu{
-    @media all and(max-width:768px){
-        order: 3;
-    }
+%transition{
+    transition: 1s;
 }
 
-.flexer{
-    width: 100%;
+.cont{
     display: flex;
-    background: aqua;
-    justify-content: space-evenly;
-    align-items: center;
     flex-wrap: wrap;
-    @media all and(max-width:568px){
-        flex-direction: column;
-    }
-}
-
-.itemo{
-    margin: 5px;
-    @include tamanoCuadrado(150px);
-    flex:0 0 150px;
-    background: brown;
-    border: 2px solid black;
-    @media all and(max-width:400px){
-        display: block;
+    width: 97%;
+    margin: 57px auto 10px auto;
+    @media all and(max-width:576px){
         width: 100%;
     }
+}
+
+nav{
+    @extend %transition;
+}
+
+li a{
+    text-align:center;
+}
+
+.cont div{
+    flex: 1;
+    min-width: 100%;
+    @extend %transition;
+}
+.uno{
+    @include flag(red);
+}
+
+.dos{
+    @include flag(yellow);
+}
+.tres{
+    @include flag(purple);
 }

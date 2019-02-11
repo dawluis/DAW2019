@@ -11,90 +11,86 @@
     <title>Examen DIW</title>
 </head>
 <body>
-    <nav class="navbar navbar-expand-lg navbar-light bg-light">
-        <a class="navbar-brand" href="#">Navbar</a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <nav class="navbar fixed-top navbar-expand-lg navbar-dark bg-info">
+        <button class="navbar-toggler boton" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
-      
-        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <a class="navbar-brand order-lg-1 mr-auto " href="#">Form of goverment</a>
+        
+        <div class="collapse navbar-collapse izq order-md-0" id="navbarSupportedContent">
+          <div id="lmenu">Left menu</div>
           <ul class="navbar-nav mr-auto">
-            <li class="nav-item active">
-              <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Republic <span class="sr-only">(current)</span></a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="#">Link</a>
-            </li>
-            <li class="nav-item dropdown">
-              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                Dropdown
-              </a>
-              <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                <a class="dropdown-item" href="#">Action</a>
-                <a class="dropdown-item" href="#">Another action</a>
-                <div class="dropdown-divider"></div>
-                <a class="dropdown-item" href="#">Something else here</a>
-              </div>
+              <a class="nav-link" href="#">Republic</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
+              <a class="nav-link" href="#" tabindex="-1" >Republic</a>
             </li>
           </ul>
-          <form class="form-inline my-2 my-lg-0">
-            <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
-            <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
-          </form>
         </div>
+        
+        <div class="collapse navbar-collapse der order-md-2" id="navbarSupportedContent">
+          <div id="rmenu">Right menu</div>
+          <ul class="navbar-nav ml-auto">
+            <li class="nav-item">
+              <a class="nav-link text-center" href="#">Kingdom <span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Kingdom</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Kingdom</a>
+            </li>
+          </ul>
+        
+
       </nav>
-      <div class="container-fluid">
-          <div class="jumbotron jumbotron-fluid">
-              <h1 class="display-4">Hello, world!</h1>
-              <p class="lead">This is a simple hero unit, a simple jumbotron-style component for calling extra attention to featured content or information.</p>
-              <hr class="my-4">
-              <p>It uses utility classes for typography and spacing to space content out within the larger container.</p>
-              <a class="btn btn-primary btn-lg" href="#" role="button">Learn more</a>
-            </div>
-          <div class="row">
-              <div id="menu" class="col-md-1 bg-secondary">
-                menu
-              </div>
-              <div class="col-md-10">
-                  <h1 style="text-align:center;">Main</h1><br>
-                <div class="row">
-                    <div class="col-sm-4 col-md-12 text-center bg-success">col-sm4</div>
-                    <div class="col-sm-4 text-center bg-success">col-sm4</div>
-                    <div class="col-sm-4 text-center bg-success">col-sm4</div>
-                    <div class="col-12 text-center bg-success">col 12</div>
-                    <div class="col-12 text-center bg-success">col 12</div>
-                </div>
-                <div class="row">
-                        <div class="col-sm-6 text-center bg-warning">col 1</div>
-                        <div class="col-sm-6 text-center bg-warning">col 1</div>
-                </div>
-                <div class="flexer">
-                  <div class="itemo"> Item uno</div>
-                  <div class="itemo"> Item dos</div>
-                  <div class="itemo"> Item tres</div>
-                  <div class="itemo"> Item uno</div>
-                  <div class="itemo"> Item dos</div>
-                  <div class="itemo"> Item tres</div>
-                  <div class="itemo"> Item uno</div>
-                  <div class="itemo"> Item dos</div>
-                  <div class="itemo"> Item tres</div>
-                </div>
-
-
-
-
-
-
-
-
-
-              </div>
-              <div class="d-none d-md-block col-md-1 bg-secondary">menu</div>
-          </div>
+      <div class="cont">
+        <div class="uno"></div>
+        <div class="dos"></div>
+        <div class="tres"></div>
+         
 
       </div>
+      <script>
+        $(document).ready(function(){
+          $(document).scroll(function(){
+            console.log($(document).scrollTop());
+            if($(document).scrollTop() > 50){
+              $('nav').removeClass("bg-info");
+              $('nav').removeClass("dark-navbar");
+              $('nav').addClass("bg-warning");
+              $('nav').addClass("light-navbar");
+            }else{
+              $('nav').addClass("bg-info");
+              $('nav').addClass("dark-navbar");
+              $('nav').removeClass("bg-warning");
+              $('nav').removeClass("light-navbar");
+            }
+          });
+        $(".izq").click(function(){
+          $(".cont div").css("height","200px");
+          $(".cont").children().eq(0).css("background","red");
+          $(".cont").children().eq(1).css("background","yellow");
+          $(".cont").children().eq(2).css("background","purple");
+        });
+        $(".der").click(function(){
+          $(".cont div").css("height","200px");
+          $(".cont").children().eq(0).css("background","red").css("height","175px");
+          $(".cont").children().eq(1).css("background","yellow").css("height","250px");
+          $(".cont").children().eq(2).css("background","red").css("height","175px");
+        });
+        $("#lmenu, #rmenu").css("text-align", "center").css("color","white");
+        $("#lmenu, #rmenu").hide();
+        $('.boton').click(function(){
+          $("#lmenu").toggle();
+          $("#rmenu").toggle();
+        })
+        
+        });
+      </script>
 </body>
 </html>

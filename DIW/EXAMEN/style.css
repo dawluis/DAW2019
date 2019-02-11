@@ -1,118 +1,59 @@
-* {
-  -webkit-box-sizing: border-box;
-          box-sizing: border-box;
+.red {
+  background: red;
 }
 
-.green {
-  background-color: green;
+.yellow {
+  background: yellow;
 }
 
-.blue {
-  background-color: blue;
+.purple {
+  background: purple;
 }
 
-.black {
-  background-color: black;
+nav, .cont div {
+  -webkit-transition: 1s;
+  transition: 1s;
 }
 
-.choto:nth-child(1) {
-  width: 11px;
-  color: red;
-}
-
-.choto:nth-child(2) {
-  width: 12px;
-  color: red;
-}
-
-.choto:nth-child(3) {
-  width: 13px;
-  color: red;
-}
-
-.choto:nth-child(4) {
-  width: 14px;
-  color: red;
-}
-
-.choto:nth-child(5) {
-  width: 15px;
-  color: red;
-}
-
-.choto:nth-child(6) {
-  width: 16px;
-  color: red;
-}
-
-.choto:nth-child(7) {
-  width: 17px;
-  color: red;
-}
-
-.choto:nth-child(8) {
-  width: 18px;
-  color: red;
-}
-
-.choto:nth-child(9) {
-  width: 19px;
-  color: red;
-}
-
-.choto:nth-child(10) {
-  width: 20px;
-  color: red;
-}
-
-@media all and (max-width: 768px) {
-  #menu {
-    -webkit-box-ordinal-group: 4;
-        -ms-flex-order: 3;
-            order: 3;
-  }
-}
-
-.flexer {
-  width: 100%;
+.cont {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  background: aqua;
-  -webkit-box-pack: space-evenly;
-      -ms-flex-pack: space-evenly;
-          justify-content: space-evenly;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
+  width: 97%;
+  margin: 57px auto 10px auto;
 }
 
-@media all and (max-width: 568px) {
-  .flexer {
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-        -ms-flex-direction: column;
-            flex-direction: column;
-  }
-}
-
-.itemo {
-  margin: 5px;
-  width: 150px;
-  height: 150px;
-  -webkit-box-flex: 0;
-      -ms-flex: 0 0 150px;
-          flex: 0 0 150px;
-  background: brown;
-  border: 2px solid black;
-}
-
-@media all and (max-width: 400px) {
-  .itemo {
-    display: block;
+@media all and (max-width: 576px) {
+  .cont {
     width: 100%;
   }
+}
+
+li a {
+  text-align: center;
+}
+
+.cont div {
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+  min-width: 100%;
+}
+
+.uno {
+  background-color: red;
+  height: 200px;
+}
+
+.dos {
+  background-color: yellow;
+  height: 200px;
+}
+
+.tres {
+  background-color: purple;
+  height: 200px;
 }
 /*# sourceMappingURL=style.css.map */
