@@ -125,8 +125,8 @@
                 dni: $("input[name=dni]").val()
               }
 
-              $.get("usuario.php", usuario , function (usuario) {
-                alert(usuario.dni); })
+              $.get("usuario.php", usuario , function (datos) {
+                alert(datos.nombre); })
                 .fail(function(jqXHR, textStatus, errorThrow){
                   alert(" TEMPORALMENTE DESABILITADO "+ errorThrow);
 
